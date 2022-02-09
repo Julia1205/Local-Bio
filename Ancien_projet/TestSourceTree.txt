@@ -1,0 +1,14 @@
+Utilisation de SourceTree: 
+1) Télécharger à cette adresse: https://product-downloads.atlassian.com/software/sourcetree/windows/ga/SourceTreeSetup-3.4.7.exe
+2) Vous connecter sur sourceTree avec votre adresse mail prévue pour Git (si besoin, connectez-vous d'abord sur BitBucket, l'authentification S.T. sera plus simple)
+3) Dans un nouvel onglet SourceTree, cliquez sur "Clone", dans le premier champ renseignez cette adresse : 
+	https://Juliedwwm21@bitbucket.org/juliedwwm21/localbio.git
+Dans le second, avec "parcourir" sélectionner le fichier local duquel vous travaillerez sur le projet (le plus simple étant un dossier "Projet" dans le répertoire www de Wamp.)
+Vous avez récupérer les fichiers du dépôt. :) 
+4) Lorsque vous modifierez le dossier, un chiffre apparaîtra sur SourceTree à côté de "Valider", 
+	cliquez dessus puis dans la fenêtre "fichiers dans l'arbre de travail" le bouton "tout indexer", ajoutez un commentaire (in english please),
+5) A côté de l'icône 'envoyer" apparaîtra un chiffre, cliquez dessus, validez.
+
+Votre code est sur le repository :)
+(si besoin d'aide, vous savez où me joindre)
+

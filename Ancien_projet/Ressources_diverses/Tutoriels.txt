@@ -1,0 +1,22 @@
+MVC :
+https://slides.com/ceformation/modele_mvc/fullscreen?token=liFqa9aa
+Doxygen:
+https://slides.com/ceformation/commentaires-php/fullscreen?token=30brzMa3
+Code Igniter:
+https://slides.com/ceformation/codeigniter-4-prise-en-main/fullscreen?token=V3ABQNhY
+
+	SQL de création de la bdd du tuto : 
+		CREATE TABLE product(
+		product_id INT PRIMARY KEY AUTO_INCREMENT,
+		product_name VARCHAR(100),
+		product_price INT
+		) ENGINE=InnoDB;
+
+INSERT INTO product(product_name, product_price)
+	VALUES ('Product 1', 20000),('Product 2', 30000);
+Contrôleur parent CI:
+https://slides.com/ceformation/codeigniter-4-controleur-parent/fullscreen?token=ANBLiurJ
+Smarty:
+https://slides.com/ceformation/php-smarty/fullscreen?token=0FeZsPFu
+Code Igniter et Smarty: 
+https://slides.com/ceformation/codeigniter-4-smarty/fullscreen?token=JUGOn9Kw

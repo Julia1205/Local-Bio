@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cardo:ital@1&family=Open+Sans:wght@300&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*BANDEAU CONNEXION*/
+
+.BandeauConnexion{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: #76A713;
+    color: white;
+    height: 3rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.IconLogin{
+    display: inline-flex;
+    float: right;
+}
+
+.fa-user{
+    margin-right: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.fa-shopping-cart{
+    text-decoration: none;
+    color: white;
+}
+
+.Bienvenue{
+    position: absolute;
+}
+
+@media screen and (max-width: 736px) 
+{ 
+    .BandeauConnexion{
+        font-size: 15px;
+        height: 2rem;
+    }
+
+}
+
+/*FIN BANDEAU CONNEXION*/
+
+/*NAVBAR*/
+
+.bg-light{
+    background-color: white !important;
+}
+
+.btn.btn-outline-success{
+    border-color: #76A713;
+    color: #76A713;
+}
+.btn.btn-outline-success:hover{
+    background-color: #76A713;
+    color: white;
+}
+
+a.nav-link{
+    font-size: 1.5rem;
+    color: black;
+}
+
+@media screen and (max-width: 768px) 
+{ 
+    a.nav-link{
+        font-size: 1rem;
+    }
+}
+
+.LogoNavBar{
+    height: 50px;
+    width: 200px;
+    margin-right: 240px;
+}
+
+/*FIN NAVBAR*/
+/*BANDEAU SHOP*/
+
+.ShopBandeau{
+    padding: 0;
+}
+
+
+@media screen and (max-width: 768px) 
+{ 
+    img.img-fluid{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/*FIN NAVBAR*/
+/*BANDEAU SHOP*/
+
+.ShopBandeau{
+    padding: 0;
+}
+
+
+@media screen and (max-width: 768px) 
+{ 
+    img.img-fluid{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/*FIN BANDEAU SHOP*/
+/*ARCTICLE*/
+
+.BoxChoice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.fa-th{
+    margin-right: 1rem;
+}
+
+.col-lg-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-right: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 380px;
+    width: 300px;
+    padding: 0;
+}
+
+.BorderBoxGreen{
+    height: 340px;
+    width: 260px;
+    border: 2px solid #FF7800;
+}
+
+.BorderBoxGreen:hover{
+    height: 380px;
+    width: 300px;
+}
+
+.ArticleAchat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    color: #707070;
+}
+
+.ImgArticle{
+    height: 150px;
+    width: 150px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.TitleArticle{
+    font-size: 1.5rem;
+}
+
+.BouttonAchatArticle{
+    background-color: #FF7800;
+    border-radius: 1rem;
+    border-style: none;
+    height: 1.8rem;
+    width: 9rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.SpanAchat{
+    margin-bottom: 3px;
+}
+
+.Categorie{
+    margin-top: 5rem;
+    margin-left: 6rem;
+    height: 361px;
+    width: 190px;
+}
+
+
+.TitleCategorie{
+    text-decoration: underline #8AAC00 3px;
+    font-size: 1.5rem;
+    color: rgb(5, 3, 3);
+    margin-bottom: 1rem;
+}
+
+.ChoixCategorieListe{
+    list-style: none;
+    cursor: pointer;
+}
+
+.ChoixCategorieNom{
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.ChoixCategorieNom :visited{
+    text-decoration: white;
+    color: black;
+}
+
+.ChoixCategorieNom:nth-child(1):hover{
+    color: #8AAC00;
+}
+
+.ChoixCategorieNom:nth-child(2):hover{
+    color: #FF7800;
+}
+
+.fa-angle-right{
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) 
+{ 
+
+    .row{
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .BoxChoice{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .IconChoice{
+        display: none;
+    }
+
+    .RechercherProduit{
+        margin-top: 1rem;
+    }
+
+    .Trie{
+        margin-top: 1rem;
+    }
+
+    .col-lg-2{
+        margin-left: 1.6rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Categorie{
+        display: none;
+    }
+}
+
+/* FOOTER */
+
+.BoxFooter{
+    margin-top: 8rem;
+    width: 100%;
+    height: 600px;
+}
+
+.BoxImageFooter2{
+    background-image: url(img/Web1920-1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 100%;
+    height: 600px;
+}
+
+.BoxSubscribe{
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    width: 100%;
+}
+
+.subscribe{
+    flex-direction: column;
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 40rem;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.abonner{
+    margin: 1rem;
+    border: none;
+    background-color: #207100;
+    height: 2rem;
+    width: 8rem;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}
+
+.BoxLien{
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+    width: 100%;
+    justify-content: space-around;
+    color: white;
+    list-style-type: none;
+    margin-top: 2rem;
+}
+
+.TitleFooter{
+    text-decoration: underline #8AAC00 3px;
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.potagerPhoto{
+    height:80px;
+    width: 80px;
+}
+
+@media screen and (max-width: 768px){
+
+    .BoxFooter{
+        height: 800px;
+    }
+
+    .BoxImageFooter2{
+        background-image: none;
+        background-color: #207100;
+        height: 800px;
+    }
+
+    div.subscribe{
+        background-color: #8AAC00;
+        width: 100%;
+    }
+
+    .subscribe{
+        text-align: center;
+    }
+
+    .BoxLien{
+        flex-direction: column;
+        margin-top: 8rem;
+    }
+    
+    .TitleFooter{
+        margin-top: 2rem;
+    }
+}
+
+.LienFooter :visited{
+    color: white;
+    text-decoration: none;
+}
+
+
