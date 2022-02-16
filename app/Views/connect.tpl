@@ -6,5 +6,11 @@
 
 
 {block name="content"}
-{$form_input}
+{$form_open}
+{$label_email}
+{$form_email}
+{$label_password}
+{$form_password}
+{$form_submit}
+{$form_close}
 {/block}

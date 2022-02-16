@@ -1,4 +1,19 @@
 <?php 
+/**
+* @file shop_model.php
+* @authors Julie Sigrist, Julien wodey, David Ombreux
+* @version 1.0
+* @date 16/02/2022
+* @brief Model des produits
+*
+*  @details 
+* <p>Cette classe permet de faire les requêtes à la base de données pour les produits</p>
+* <p>Les actions sont :</p>
+* <ul>
+* 	<li><strong>findByCat</strong> : récupération des articles en fonction de leur catégorie</li>
+* </ul>
+*
+**/
 namespace App\Models;
 use CodeIgniter\Model;
 
@@ -8,6 +23,7 @@ class Shop_model extends Model{
     protected $table         = 'product';
     // Nom du champ de la clé primaire
     protected $primaryKey    = 'product_id';
+	$protected 
     // Champs utilisables
     protected $allowedFields = ['product_name', 'product_desc', 'product_pu', 'product_img'];
  
@@ -16,7 +32,15 @@ class Shop_model extends Model{
  
     // Utilisation ou non des dates (création / modification)
     protected $useTimestamps = false;
-	
+/**
+*	@brief 		fonction retournant la liste des produits de la base de données
+* 	@details 
+*	<p>Cette fonction permet de rechercher via une requête, 
+*		la liste des produits présents dans la base de données</p>
+*	@param 	$intNumCat integer
+*	@return	Tableau contenant les produits
+*
+**/
 	public function findByCat($intNumCat){
 		$arrList = $this->where("category_id", $intNumCat)->findAll();
 		return $arrList;

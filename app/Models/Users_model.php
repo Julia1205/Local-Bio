@@ -1,4 +1,21 @@
 <?php 
+/**
+* @file Users_model.php
+* @authors Julie Sigrist, Julien Wodey, Ombreux David
+* @version 1.0
+* @date 16/02/2022
+* @brief model des utilisateurs
+*
+*  @details 
+* <p>Requêtes à la table des utilisateurs</p>
+* <p>Les actions sont :</p>
+* <ul>
+* 	<li><strong></strong> : </li>
+* 	<li><strong></strong> : </li>
+* 	<li><strong></strong> : </li>
+* </ul>
+*
+**/
 namespace App\Models;
 use CodeIgniter\Model;
 
@@ -17,13 +34,9 @@ class Users_model extends Model{
     // Utilisation ou non des dates (création / modification)
     protected $useTimestamps = false;
 	
-	public function findByCat($intNumCat){
-		$arrList = $this->where("user_email")->find();
-		return $arrList;
-	}
 	
 	public function random(){
-			$hello = "hi";
+		$hello = "hi";
 		return $hello;
 		
 	}

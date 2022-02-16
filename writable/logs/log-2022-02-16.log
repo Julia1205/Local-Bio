@@ -1558,3 +1558,56 @@ CRITICAL - 2022-02-16 07:45:10 --> Undefined index: form_input
 #21 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #22 C:\wamp64\www\Local-Bio\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #23 {main}
+CRITICAL - 2022-02-16 07:47:38 --> Undefined index: form_open
+#0 C:\wamp64\www\Local-Bio\writable\cache\templates_c\1948e206fc209c416fd3af5bb0d10b33082c18be_0.file.connect.tpl.php(70): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\wamp64\\www\\L...', 70, Array)
+#1 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_runtime_inheritance.php(248): Block_1446282018620d007a85f2b2_47038515->callBlock(Object(Smarty_Internal_Template))
+#2 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_runtime_inheritance.php(184): Smarty_Internal_Runtime_Inheritance->callBlock(Object(Block_1446282018620d007a85f2b2_47038515), Object(Smarty_Internal_Template))
+#3 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_runtime_inheritance.php(186): Smarty_Internal_Runtime_Inheritance->process(Object(Smarty_Internal_Template), Object(Block_1446282018620d007a85f2b2_47038515), Object(Block_705300726620cc8e90c9b03_85079464))
+#4 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_runtime_inheritance.php(156): Smarty_Internal_Runtime_Inheritance->process(Object(Smarty_Internal_Template), Object(Block_705300726620cc8e90c9b03_85079464))
+#5 C:\wamp64\www\Local-Bio\writable\cache\templates_c\cfd4c613c8df35d7c954cf754ee3857e80ca1868_0.file.layout.tpl.php(32): Smarty_Internal_Runtime_Inheritance->instanceBlock(Object(Smarty_Internal_Template), 'Block_705300726...', 'content')
+#6 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_template_resource_base.php(123): content_620cc8e90cb783_58494973(Object(Smarty_Internal_Template))
+#7 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_template_compiled.php(114): Smarty_Template_Resource_Base->getRenderedTemplateCode(Object(Smarty_Internal_Template))
+#8 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_template.php(216): Smarty_Template_Compiled->render(Object(Smarty_Internal_Template))
+#9 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_template.php(385): Smarty_Internal_Template->render()
+#10 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_runtime_inheritance.php(116): Smarty_Internal_Template->_subTemplateRender('layout.tpl', NULL, NULL, 0, 3600, Array, 2, false, NULL, NULL)
+#11 C:\wamp64\www\Local-Bio\writable\cache\templates_c\1948e206fc209c416fd3af5bb0d10b33082c18be_0.file.connect.tpl.php(37): Smarty_Internal_Runtime_Inheritance->endChild(Object(Smarty_Internal_Template), 'layout.tpl')
+#12 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_template_resource_base.php(123): content_620d007a861113_61495758(Object(Smarty_Internal_Template))
+#13 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_template_compiled.php(114): Smarty_Template_Resource_Base->getRenderedTemplateCode(Object(Smarty_Internal_Template))
+#14 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_template.php(216): Smarty_Template_Compiled->render(Object(Smarty_Internal_Template))
+#15 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_templatebase.php(238): Smarty_Internal_Template->render(false, 1)
+#16 C:\wamp64\www\Local-Bio\app\smarty\libs\sysplugins\smarty_internal_templatebase.php(134): Smarty_Internal_TemplateBase->_execute(Object(Smarty_Internal_Template), NULL, NULL, NULL, 1)
+#17 C:\wamp64\www\Local-Bio\app\Controllers\BaseController.php(71): Smarty_Internal_TemplateBase->display('connect.tpl')
+#18 C:\wamp64\www\Local-Bio\app\Controllers\Users.php(23): App\Controllers\BaseController->display('connect.tpl')
+#19 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(825): App\Controllers\Users->connect()
+#20 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#21 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#22 C:\wamp64\www\Local-Bio\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#23 {main}
+CRITICAL - 2022-02-16 07:50:57 --> Undefined variable: _data
+#0 C:\wamp64\www\Local-Bio\app\Controllers\Users.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\wamp64\\www\\L...', 19, Array)
+#1 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(825): App\Controllers\Users->connect()
+#2 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\Local-Bio\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-16 07:51:44 --> Undefined variable: _data
+#0 C:\wamp64\www\Local-Bio\app\Controllers\Users.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\wamp64\\www\\L...', 19, Array)
+#1 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(825): App\Controllers\Users->connect()
+#2 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\Local-Bio\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-16 07:52:13 --> Undefined variable: _data
+#0 C:\wamp64\www\Local-Bio\app\Controllers\Users.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\wamp64\\www\\L...', 16, Array)
+#1 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(825): App\Controllers\Users->connect()
+#2 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\Local-Bio\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-16 07:56:22 --> syntax error, unexpected end of file
+#0 C:\wamp64\www\Local-Bio\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('users/connect')
+#1 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(719): CodeIgniter\Router\Router->handle('users/connect')
+#2 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\Local-Bio\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\Local-Bio\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
