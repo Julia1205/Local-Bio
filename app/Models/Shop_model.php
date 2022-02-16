@@ -23,7 +23,6 @@ class Shop_model extends Model{
     protected $table         = 'product';
     // Nom du champ de la clé primaire
     protected $primaryKey    = 'product_id';
-	$protected 
     // Champs utilisables
     protected $allowedFields = ['product_name', 'product_desc', 'product_pu', 'product_img'];
  

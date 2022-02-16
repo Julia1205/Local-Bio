@@ -43,15 +43,13 @@ class Users extends BaseController{
 		$this->_data['form_submit' ]= form_submit("submit", "Validez !");
 		$this->_data['form_close'] = form_close();
 		if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
-		$this->_data['user'] = $_POST['user_email'];
-		$objUsers = new users_entity;
-		$objUsersModel = new users_model;
-        $objUsers->fill($this->request->getPost());
-		$this->_data['user'] = $_POST['user_email'];
+			$objUsers = new users_entity;
+			$objUsersModel = new users_model;
+			$objUsers->fill($this->request->getPost('user_email', 'user_password'));
 
-            //return redirect()->to('users/profil'); // redirection vers l'action par défaut du controller Product
-		$this->_data['user'] = $objUsersModel->connect();
-		var_dump($this->_data);
+				//return redirect()->to('users/profil'); // redirection vers l'action par défaut du controller Product
+			$this->_data['user'] = $objUsersModel->connect();
+			var_dump($objUsersModel);
         }
 		$this->display('connect.tpl');
 

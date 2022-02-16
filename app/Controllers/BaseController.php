@@ -41,6 +41,7 @@ class BaseController extends Controller
      */
     protected $helpers = [];
     protected $_data = [];
+	protected $_SESSION = [];
 
     /**
      * Constructor.

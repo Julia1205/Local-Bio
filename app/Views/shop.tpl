@@ -23,24 +23,22 @@
             <input type="text" placeholder="Recherche de produit" class="RechercherProduit">
         </div>
 		<div class="container">
-				{foreach from=$products item=objProduct}
-						<!--{$objProduct|@var_dump}-->
-
-							 <div class="row">
-								<div class="col-lg-2">
-							<div class="BorderBoxGreen">
-									<div class="ArticleAchat">
-										<img src="{base_url('assets/img')}/{$objProduct->product_img}" alt="{$objProduct->product_name}" class="ImgArticle">
-										<span class="TitleArticle">{$objProduct->product_name}</span>
-										<span>{$objProduct->product_pu} €</span>
-										<button class="BouttonAchatArticle" onclick="window.location.href ='legume.html';" >
-											<span class="SpanAchat">Voir l'article</span>
-										</button>
+					<div class="row">
+						{foreach from=$products item=objProduct}
+							<div class="col-lg-2">
+									<div class="BorderBoxGreen">
+										<div class="ArticleAchat">
+											<img src="{base_url('assets/img')}/{$objProduct->product_img}" alt="{$objProduct->product_name}" class="ImgArticle">
+											<span class="TitleArticle">{$objProduct->product_name}</span>
+											<span>{$objProduct->product_pu} €</span>
+											<button class="BouttonAchatArticle" onclick="window.location.href ='legume.html';" >
+												<span class="SpanAchat">Voir l'article</span>
+											</button>
+										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-					{/foreach}
+								</div>			
+						{/foreach}
+					</div>
 			</div>
 		</div>
 	</div>

@@ -26,8 +26,10 @@
         <div class="container">
             <span>Bienvenue dans votre magasin</span>
             <div class="IconLogin">
+
                 <a href="{base_url('index.php/users/connect')}"><i class="fas fa-user"></i></a>
                 <a href="panier.html"><i class="fas fa-shopping-cart"></i></a>
+
             </div>
         </div>
     </div>

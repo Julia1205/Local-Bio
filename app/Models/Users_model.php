@@ -39,7 +39,7 @@ class Users_model extends Model{
 		$this->_data['user'];
 		$userconnect = $this->where("user_email", $_data['user_email'])->find();
 		return $userconnect;
-		var_dump($_data);
+		var_dump($objUsersModel);
 
 		
 	}
