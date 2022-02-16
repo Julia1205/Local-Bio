@@ -12,6 +12,7 @@ class Shop extends BaseController{
 	public function boutique($intCat=null){
 
 		$this->_data['title'] = "Boutique";
+		$this->_data['c'] = [1, 2, 3];
 		$objShop = new shop_entity;
 		$objShopModel = new shop_model;
 		

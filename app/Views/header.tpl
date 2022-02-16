@@ -26,7 +26,7 @@
         <div class="container">
             <span>Bienvenue dans votre magasin</span>
             <div class="IconLogin">
-                <a href="connexion.html"><i class="fas fa-user"></i></a>
+                <a href="{base_url('index.php/users/connect')}"><i class="fas fa-user"></i></a>
                 <a href="panier.html"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link {if $title eq 'Accueil'}active{/if}" href="{base_url('')}">Accueil</a>
+                            <a class="nav-link {if $title eq 'Accueil'}active{/if}" href="{base_url('index.php/Pages/accueil')}">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {if $title eq 'Boutique'}active{/if}" aria-current="page" href="{base_url('index.php/shop/boutique')}">Boutique</a>

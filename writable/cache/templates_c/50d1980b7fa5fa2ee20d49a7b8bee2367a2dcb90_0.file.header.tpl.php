@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-02-16 03:50:33
+/* Smarty version 4.1.0, created on 2022-02-16 07:23:29
   from 'C:\wamp64\www\Local-Bio\app\Views\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_620cc8e911e574_27266749',
+  'unifunc' => 'content_620cfad127b2f0_29845562',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50d1980b7fa5fa2ee20d49a7b8bee2367a2dcb90' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\header.tpl',
-      1 => 1645002323,
+      1 => 1645017806,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_620cc8e911e574_27266749 (Smarty_Internal_Template $_smarty_tpl) {
+function content_620cfad127b2f0_29845562 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,7 +33,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_776684954620cc8e910d061_04146346', "css");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1787461980620cfad1268024_63000326', "css");
 ?>
 
 
@@ -58,7 +58,8 @@ echo base_url('assets/css/shop.css');?>
         <div class="container">
             <span>Bienvenue dans votre magasin</span>
             <div class="IconLogin">
-                <a href="connexion.html"><i class="fas fa-user"></i></a>
+                <a href="<?php echo base_url('index.php/users/connect');?>
+"><i class="fas fa-user"></i></a>
                 <a href="panier.html"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
@@ -76,7 +77,7 @@ echo base_url('assets/css/shop.css');?>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($_smarty_tpl->tpl_vars['title']->value == 'Accueil') {?>active<?php }?>" href="<?php echo base_url('');?>
+                            <a class="nav-link <?php if ($_smarty_tpl->tpl_vars['title']->value == 'Accueil') {?>active<?php }?>" href="<?php echo base_url('index.php/Pages/accueil');?>
 ">Accueil</a>
                         </li>
                         <li class="nav-item">
@@ -102,12 +103,12 @@ echo base_url('assets/css/shop.css');?>
     <!--FIN NAVBAR-->
 <?php }
 /* {block "css"} */
-class Block_776684954620cc8e910d061_04146346 extends Smarty_Internal_Block
+class Block_1787461980620cfad1268024_63000326 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'css' => 
   array (
-    0 => 'Block_776684954620cc8e910d061_04146346',
+    0 => 'Block_1787461980620cfad1268024_63000326',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
