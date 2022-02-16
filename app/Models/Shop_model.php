@@ -9,7 +9,7 @@ class Shop_model extends Model{
     // Nom du champ de la clé primaire
     protected $primaryKey    = 'product_id';
     // Champs utilisables
-    protected $allowedFields = ['product_name', 'product_price'];
+    protected $allowedFields = ['product_name', 'product_desc', 'product_pu'];
  
     // Type de retour => Chemin de l'entité à utiliser
     protected $returnType    = 'App\Entities\Shop_entity';
@@ -18,7 +18,7 @@ class Shop_model extends Model{
     protected $useTimestamps = false;
 	
 	public function findByCat($intNumCat){
-		$arrList = $this->where("product_cat", $intNumCat)->findAll();
+		$arrList = $this->where("category_id", $intNumCat)->findAll();
 		return $arrList;
 	}
 	
