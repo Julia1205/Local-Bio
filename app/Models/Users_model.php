@@ -35,9 +35,12 @@ class Users_model extends Model{
     protected $useTimestamps = false;
 	
 	
-	public function random(){
-		$hello = "hi";
-		return $hello;
+	public function connect(){
+		$this->_data['user'];
+		$userconnect = $this->where("user_email", $_data['user_email'])->find();
+		return $userconnect;
+		var_dump($_data);
+
 		
 	}
 }
