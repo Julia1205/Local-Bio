@@ -10,6 +10,7 @@ class Shop extends BaseController{
 	}
 	
 	public function boutique($intCat=null){
+
 		$this->_data['title'] = "Boutique";
 		$objShop = new shop_entity;
 		$objShopModel = new shop_model;
@@ -19,7 +20,6 @@ class Shop extends BaseController{
 		}else{
 			$this->_data['products'] = $objShopModel->findAll();
 		}
-		
 		$this->display('shop.tpl');
 	}
 }
