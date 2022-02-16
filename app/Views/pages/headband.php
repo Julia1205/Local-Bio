@@ -1,1 +1,0 @@
-<?php echo img(array('src'=>'images/BandeauShop.jpg', 'alt'=> '', 'class'=> 'img-fluid')); ?>
