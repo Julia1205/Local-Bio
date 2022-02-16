@@ -1,0 +1,1045 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cardo:ital@1&family=Open+Sans:wght@300&display=swap');
+
+/*BANDEAU CONNEXION*/
+
+.BandeauConnexion{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: #76A713;
+    color: white;
+    height: 3rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.IconLogin{
+    display: inline-flex;
+    float: right;
+}
+
+.fa-user{
+    margin-right: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.fa-shopping-cart{
+    text-decoration: none;
+    color: white;
+}
+
+.Bienvenue{
+    position: absolute;
+}
+
+@media screen and (max-width: 736px) 
+{ 
+    .BandeauConnexion{
+        font-size: 15px;
+        height: 2rem;
+    }
+
+}
+
+/*FIN BANDEAU CONNEXION*/
+
+/*NAVBAR*/
+
+.bg-light{
+    background-color: white !important;
+}
+
+.btn.btn-outline-success{
+    border-color: #76A713;
+    color: #76A713;
+}
+.btn.btn-outline-success:hover{
+    background-color: #76A713;
+    color: white;
+}
+
+a.nav-link{
+    font-size: 1.5rem;
+    color: black;
+}
+
+@media screen and (max-width: 768px) 
+{ 
+    a.nav-link{
+        font-size: 1rem;
+    }
+}
+
+.LogoNavBar{
+    height: 50px;
+    width: 200px;
+    margin-right: 240px;
+}
+
+/*FIN NAVBAR*/
+
+/*PAGE ACCUEIL*/
+
+.container-fluid{
+    background-color: #F3F3F3;
+    height: 40rem;
+}
+
+.col-sm-6{
+    margin-top: 8rem;
+}
+
+.BoxTitle{
+    flex-direction: column;
+    width: 530px;
+    height: 430px;
+}
+
+.Title{
+    font-family: 'Lora', serif;
+    font-size: 65px;
+}
+
+.TexteTitle{
+    color: #665C5C;
+}
+
+.BouttonAchat{
+    display: inline-flex;
+    justify-content: space-around;
+    width: 293px;
+    height: 73px;
+    background-color: #76A713;
+    color: white;
+    border-radius: 50px;
+    margin-top: 50px;
+    align-items: center;
+    text-decoration: none ;
+}
+
+.BouttonAchat:hover{
+    background-color: #FF7800;
+}
+
+.TexteAchat{
+    display: inline-flex;
+    justify-content: center;
+    font-weight: bold;
+    align-items: center;
+    margin-top: 0.8rem;
+    text-decoration: none;
+    color: white;
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+} 
+
+.CercleFleche{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.FlecheAchat{
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+
+.FontOrange{
+    margin-left: 10rem;
+    position: relative;
+    width: 406px;
+    height: 406px;
+    animation: rotate 30s infinite;
+    animation-iteration-count: infinite;
+}
+
+.Orange{
+    margin-left: 10rem;
+    position: absolute;
+    z-index: 1;
+    height: 499px;
+    width: 529px;
+    transition: transform .5s;
+}
+
+.Orange:Hover{
+    transform: scale(1.1) rotate(10deg);
+}
+
+.FondPage{
+    max-width : 100%;
+    height: auto;
+    display: block;
+ }
+
+ @keyframes rotate{
+    100%{transform: rotate(360deg);}
+}
+
+@media screen and (max-width: 768px) 
+{ 
+
+    .Orange{
+        display: none;
+    }
+
+    .FontOrange{
+        display: none;
+    }
+
+    .container-fluid{
+        height: 30rem;
+    }
+
+    .oxTitle{
+        height: 30rem;
+    }
+
+    .Title{
+        font-size: 2.8rem;
+    }
+
+    .col-sm-6{
+        margin-top: 3rem;
+    }
+
+    .BoxTitle{
+        width: 300px;
+        height: 630px;
+    }
+    .basilic1{
+        display: none;
+    }
+    
+    .basilic2{
+        display: none;
+    }
+    
+    .basilic3{
+        display: none;
+    }
+    
+    .basilic4{
+        display: none;
+    }
+    
+    .basilic5{
+        display: none;
+    }
+
+    .BouttonAchat{
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        width: 223px;
+        height: 53px;
+        font-size: 0.8rem;
+    }
+
+    .BouttonAchat:hover{
+        background-color: none;
+    }
+    
+    .TexteAchat{
+        display: inline-flex;
+        justify-content: center;
+        font-weight: bold;
+        align-items: center;
+    }
+    
+    .CercleFleche{
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+    
+    .FlecheAchat{
+        display: inline-flex;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+    }
+
+    .LegumeImage{
+        display: none;
+    }
+
+    .col-lg-6{
+        display: block;
+    }
+
+    div.Box1gauche{
+        height: 300px;
+        width: 350px; 
+        margin-top: 4rem;
+    }
+
+    .ImageFruitsEtLegume{
+        height: 300px;
+        width: 350px; 
+    }
+
+    .Box1title{
+        display: flex;
+        text-align: center;
+    }
+
+    .ParagrapheBox{
+        margin-left: 1rem;
+        display: flex;
+        text-align: center;
+    }
+
+    .FondPage{
+        display: none;
+    }
+
+    .LegumeImage2{
+        display: none;
+    }
+
+    .LienBox1{
+        display: flex;
+        align-items: center;
+        margin-left: 2.5rem;
+        background-color: #FF7800;
+    }
+
+    .TexteLienBox1{
+        color: black;
+        margin-top: 0;
+    }
+
+    .TexteLienBox1 :hover{
+        color: white;
+    }
+
+    div.Box1Image{
+        display: none;
+    }
+
+    div.Box2Droite{
+        height: 300px;
+        width: 350px;
+        margin-top: 4rem;
+    }
+
+    div.LienBox2{
+        margin-left: 2.5rem;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/*FIN PAGE ACCUEIL*/
+/*DEUXIEME PAGE*/
+
+.Box1gauche{
+    display: inline-flex;
+    width: 570px;
+    height: 306px;
+    background-color: #FDF7E9;
+    margin-top: 10rem;
+}
+
+
+.Box2Droite{
+    display: inline-flex;
+    width: 570px;
+    height: 306px;
+    background-color: #E9F9FD;
+    margin-top: 10rem;
+}
+
+.Box1title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 285px;
+    height: 306px;
+    margin-left: 20px;
+}
+
+.Box1Image{
+    width: 285px;
+    height: 306px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+
+h4{
+    font-size: 21px;
+    color: #000000;
+    font-weight: lighter;
+}
+
+.ParagrapheBox{
+    color: #6D6D6D;
+    font-size: 15px;
+}
+
+.LienBox1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 48px;
+    width: 225px;
+    border: 3px solid #FF7800;
+    border-radius: 50px;
+    margin-top: 20px;
+    color: black;
+}
+
+.LienBox1 :visited{
+    text-decoration: none;
+    color: black;
+}
+
+.LienBox1:hover{
+    background-color: #FF7800;
+    color: white ;
+}
+
+
+/* 2eme box */
+
+.Box2title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 285px;
+    height: 306px;
+    margin-left: 20px;
+}
+
+.LienBox2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 48px;
+    width: 225px;
+    border-radius: 50px;
+    margin-top: 20px;
+    background-color: #E9F9FD;
+    border: #437EFF 3px solid;
+    color:black;
+}
+
+.Box2Image{
+    width: 285px;
+    height: 306px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+
+.TexteLienBox2{
+    margin-top: 0.8rem;
+}
+
+.LienBox2:hover{
+    background-color: #437EFF;
+    color: white;
+}
+
+/*BAS PAGE 2*/
+
+.BoxGaucheImage{
+    display: inline-flex;
+    width: 735px;
+    height: 550px;
+    margin-right: 20px;
+}
+
+.BoxDroiteTexte{
+    display: inline-flex;
+    width: 640px;
+    height: 550px;
+}
+
+.BoxDroiteTexte{
+    display: flex;
+    flex-direction: column;
+}
+
+.Pvert{
+    color: #8AAC00;
+    font-size: 20px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.Title2page2{
+    margin-top: 20px;
+    font-size: 40px;
+    font-family: 'Lora', serif;
+}
+
+.Title4page2{
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.Pgris{
+    font-size: 15px;
+    color: #94928C;
+}
+
+.carotte{
+    display: inline-flex;
+    align-items: flex-end;
+    width: 356px;
+    height: 106px;
+}
+
+.feuille{
+    display: inline-flex;
+    align-items: flex-end;
+    width: 356px;
+    height: 106px;
+}
+
+.BoxBasPage2{
+    display: flex;
+    align-items: flex-end;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Logocarotte{
+    margin-right: 10px;
+    width: 61px;
+    height: 69px;
+}
+
+.Logofeuille{
+    margin-right: 10px;
+    width: 51px;
+    height: 69px;
+}
+
+.PourquoiBio{
+    width: 265px;
+    height: 70px;
+}
+
+.TitleBaspage2{
+    font-size: 16px;
+    font-family: 'Lora', serif;
+}
+
+.TextBaspage2{
+    font-size: 15px;
+    color: #94928C;
+}
+
+.basilic1{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    animation: slideDown 6s;
+    animation-iteration-count: infinite;
+}
+
+.basilic2{
+    position: absolute;
+    top: 75%;
+    left: 0%;
+    animation: slideDown 12s;
+    animation-iteration-count: infinite;
+}
+
+.basilic3{
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    animation: slideDown 8s;
+    animation-iteration-count: infinite;
+}
+
+.basilic4{
+    position: absolute;
+    top: 13%;
+    left: 70%;
+    opacity: 0.9;
+    animation: slideDown 15s;
+    animation-iteration-count: infinite;
+}
+
+.basilic5{
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    opacity: 0.8;
+    animation: slideDown 7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(20px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(20px);
+    }
+}
+
+@keyframes myAnim {
+    0% {
+      transform: translate(0);
+    }
+
+    20% {
+      transform: translate(-2px, 2px);
+    }
+
+    40% {
+      transform: translate(-2px, -2px);
+    }
+
+    60% {
+      transform: translate(2px, 2px);
+    }
+
+    80% {
+      transform: translate(2px, -2px);
+    }
+
+    100% {
+      transform: translate(0);
+    }
+  }
+
+
+.SliderTop{
+    background-image: url(../../assets/img/slider-top.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .containerPage2{
+        display: block;
+    }
+
+    .BoxGaucheImage{
+        height: 300px;
+        width: 3OOpx;
+    }
+
+    .BoxDroiteTexte{
+        display: flex;
+        align-items: center;
+        width: 340px;
+        height: 550px;
+        text-align: center;
+    }
+
+    .Title2page2{
+        text-align: center;
+    }
+
+    .BoxBasPage2{
+        display: block;
+    }
+}
+
+/*FIN BAS PAGE 2*/
+/*PAGE 3*/
+
+.FondPage3{
+    background-color:  #F3F3F3;
+    width: 100%;
+    height: 680px;
+}
+
+.ProduitSélectionBox{
+    display: flex;
+    justify-content: center;
+    justify-content:space-around;
+}
+
+.BoxTopPage3Title{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 742px;
+    text-align: center;
+    margin-left: 16rem;
+
+}
+
+.BoxMidPage3{
+    margin-top: 50px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 495px;
+    width: 100%;
+}
+
+.SliderProduit1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 328px;
+    width: 249px;
+}
+
+.SliderProduit2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 328px;
+    width: 249px;
+}
+
+.SliderProduit3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 328px;
+    width: 249px;
+}
+
+.SliderProduit4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 328px;
+    width: 249px;
+}
+
+.BorderColor1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #8AAC00;
+    height: 288px;
+    width: 206px;
+    padding: 5px;
+    text-align: center;
+}
+
+.BorderColor1:hover{
+    border: 3px solid #8AAC00;
+    height: 328px;
+    width: 249px;
+}
+
+.BorderColor1:hover .lettre{
+    color: #8AAC00;
+}
+
+.BorderColor2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #FF7800;
+    height: 288px;
+    width: 206px;
+    padding: 5px;
+    text-align: center;
+}
+
+.BorderColor2:hover{
+    border: 3px solid #FF7800;
+    height: 328px;
+    width: 249px;
+}
+
+.BorderColor2:hover .lettre2{
+    color: #FF7800;
+}
+
+.BorderColor3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #C88149;
+    height: 288px;
+    width: 206px;
+    padding: 5px;
+    text-align: center;
+}
+
+.BorderColor3:hover{
+    border: 3px solid #C88149;
+    height: 328px;
+    width: 249px;
+}
+
+.BorderColor3:hover .lettre3{
+    color: #C88149;
+}
+
+
+.BorderColor4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #363127;
+    height: 288px;
+    width: 206px;
+    padding: 5px;
+    text-align: center;
+}
+
+.BorderColor4:hover{
+    border: 3px solid #363127;
+    height: 328px;
+    width: 249px;
+}
+
+.BorderColor4:hover .lettre4{
+    color: #363127;
+}
+
+
+.col-lg-2{
+    margin-right: 6.5rem;
+    margin-top: 5rem;
+}
+
+.lettre{
+    position: relative;
+    font-size: 70px;
+    color: #6D6D6D;
+    z-index: 1;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+}
+
+.lettre2{
+    position: relative;
+    font-size: 70px;
+    color: #6D6D6D;
+    z-index: 1;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+}
+
+.lettre3{
+    position: relative;
+    font-size: 70px;
+    color: #6D6D6D;
+    z-index: 1;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+}
+
+.lettre4{
+    position: relative;
+    font-size: 70px;
+    color: #6D6D6D;
+    z-index: 1;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+}
+
+
+.BoxLettre{
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: 144px;
+    margin-bottom: 20px;
+}
+
+.PngSlider{
+    height: 99px;
+    width: 119px;
+    z-index: 10;
+}
+
+@media screen and (max-width: 768px){
+
+    .SliderTop{
+        display: none;
+    }
+
+    .FondPage3{
+        margin-top: 15rem;
+        width: 100%;
+        height: 1700px;
+    }
+
+    .BoxTopPage3Title{
+        width: 100%;
+        margin-top: 5rem;
+        margin-left: 0;
+    }
+
+    div.SliderProduit1{
+        margin-top: 4rem;
+        margin-left: 6rem;
+    }
+}
+
+/*FIN PAGE 3 */
+/* FOOTER */
+
+.BoxFooter{
+    width: 100%;
+    height: 800px;
+}
+
+.BoxImageFooter1{
+    background-image: url(../../assets/img/slider.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+}
+
+.BoxImageFooter2{
+    background-image: url("../../assets/img/Web1920-1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 100%;
+    height: 600px;
+}
+
+.BoxSubscribe{
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    width: 100%;
+}
+
+.subscribe{
+    flex-direction: column;
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 40rem;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.abonner{
+    margin: 1rem;
+    border: none;
+    background-color: #207100;
+    height: 2rem;
+    width: 8rem;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}
+
+.BoxLien{
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+    width: 100%;
+    justify-content: space-around;
+    color: white;
+    list-style-type: none;
+    margin-top: 2rem;
+}
+
+.TitleFooter{
+    text-decoration: underline #8AAC00 3px;
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.potagerPhoto{
+    height:80px;
+    width: 80px;
+}
+
+.LienFooter{
+    cursor: pointer;
+    margin-top: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.LienFooter :visited{
+    color: white;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .BoxFooter{
+        height: 800px;
+    }
+
+    .BoxImageFooter2{
+        background-image: none;
+        background-color: #207100;
+        height: 800px;
+    }
+
+    div.subscribe{
+        background-color: #8AAC00;
+        width: 100%;
+    }
+
+    .subscribe{
+        text-align: center;
+    }
+
+    .BoxLien{
+        flex-direction: column;
+        margin-top: 8rem;
+    }
+    
+    .TitleFooter{
+        margin-top: 2rem;
+    }
+}

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.Box{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    flex-direction: column;  
+    align-items: center;
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+.ButtonSubmit{
+    border-style: none;
+    background-color: #76A713;
+    color: white;
+    font-size: 1.2rem;
+    height: 45px;
+    width: 170px;
+    border-radius: 25px;
+}
+
+input{
+    border-style: solid;
+    text-align: center;
+    border-radius: 0.5px;
+    border-color: #9A9A9A;
+    color: #9A9A9A;
+    border-radius: 10px;
+    height: 30px;
+    width: 172px;
+}
+
+.TextBackBold{
+    font-weight: bold;
+    color: black;
+}
+
+.CheckBox{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 0.8rem;
+    color: #9A9A9A;
+    justify-content: space-evenly;
+}
+
+.InputText{
+    max-height: 80px;
+    max-width: 235px;
+    height: 80px;
+    width: 235px;
+}
+
+.focusGreen:focus{
+    color: #76A713 !important;
+}
+
+input.checkbox{
+    border-radius: 0;
+    border: 3px solid black;
+}

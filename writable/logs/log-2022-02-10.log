@@ -1,0 +1,9 @@
+CRITICAL - 2022-02-10 13:53:04 --> App\Controllers\BaseController::initController(): Failed opening required 'C:\wamp64\www\test\app\ThirdParty/smarty/Smarty.class.php' (include_path='.;C:\php\pear')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-02-10 13:55:43 --> App\Controllers\BaseController::initController(): Failed opening required 'C:\wamp64\www\test\app\smarty/Smarty.class.php' (include_path='.;C:\php\pear')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-02-10 13:56:06 --> App\Controllers\BaseController::initController(): Failed opening required 'C:\wamp64\www\test\app\smarty/Smarty.class.php' (include_path='.;C:\php\pear')
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
