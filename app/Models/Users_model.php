@@ -35,11 +35,15 @@ class Users_model extends Model{
     protected $useTimestamps = false;
 	
 	
-	public function connect(){
-		$this->_data['user'];
-		$userconnect = $this->where("user_email", $_data['user_email'])->find();
+	public function login($arrPost){
+		//var_dump($arrPost); die;
+		$password = $arrPost['user_password'];
+		$mail = $arrPost['user_email'];
+		$userconnect = $this->where("user_email", $mail)->find();
+		
+		
 		return $userconnect;
-		var_dump($objUsersModel);
+
 
 		
 	}

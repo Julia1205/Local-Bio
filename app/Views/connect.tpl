@@ -18,5 +18,9 @@
 {$form_password}
 {$form_submit}
 {$form_close}
+                <div class="RegisterBox">
+                    <span></span><a href="{base_url('index.php/users/create')}" class="LienSubscribe">S'inscrire</a>
+                </div>
+
 
 {/block}
