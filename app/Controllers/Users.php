@@ -76,7 +76,7 @@ class Users extends BaseController{
 		$this->_data['form_email'] = form_input ("user_email", "", "id='user_email'");
 		$this->_data['label_password']     = form_label("Mot de passe : ", "user_password");
 		$this->_data['form_password'] = form_input ("user_password", "", "id='user_password'", "password");
-		$this->_data['form_submit' ]= form_submit("submit", "Validez !");
+		$this->_data['form_submit' ]= form_submit("submit", "Se connecter");
 		$this->_data['form_close'] = form_close();
 			if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
 				if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
