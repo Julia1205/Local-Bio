@@ -35,7 +35,6 @@ class Shop extends BaseController{
 	public function boutique($intCat=null){
 
 		$this->_data['title'] = "Boutique";
-		$this->_data['c'] = [1, 2, 3];
 		$objShop = new shop_entity;
 		$objShopModel = new shop_model;
 		
@@ -45,5 +44,18 @@ class Shop extends BaseController{
 			$this->_data['products'] = $objShopModel->findAll();
 		}
 		$this->display('shop.tpl');
+	}
+	
+	public function details($charName=null){
+		$this->_data['title'] = "Details";
+		$objShop = new shop_entity;
+		$objShopModel = new shop_model;
+		if($charName != null){
+		$this->_data['product'] = $objShopModel->findDetails($charName);
+		var_dump($this->_data['product']); die;
+		$this->display('details.tpl');
+		}
+		
+		
 	}
 }

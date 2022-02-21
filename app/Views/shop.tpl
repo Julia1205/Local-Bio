@@ -32,7 +32,7 @@
 											<span class="TitleArticle">{$objProduct->product_name}</span>
 											<span>{$objProduct->product_pu} €</span>
 											<button class="BouttonAchatArticle" onclick="window.location.href ='legume.html';" >
-												<span class="SpanAchat">Voir l'article</span>
+												<span class="SpanAchat"><a href='{base_url('index.php/shop/details')}/{$objProduct->url_name}'>Voir l'article</a></span>
 											</button>
 										</div>
 									</div>

@@ -7,6 +7,9 @@
 
 	{block name="content"}
 		<div class="container">
+		{$arrErrors}
+			
+		
 			{$form_open}
 				<div class="mx-auto">
 					<div class="row mb-3">
@@ -15,6 +18,7 @@
 						</div>
 						<div class="col-sm-10">
 							{$form_email}
+							
 						</div>
 					</div>
 					<div class="row mb-3">

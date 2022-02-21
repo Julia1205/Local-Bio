@@ -45,8 +45,9 @@ class Shop_model extends Model{
 		return $arrList;
 	}
 	
-	public function random(){
-		$hello = "hi";
+	public function findDetails($charProduct){
+		$arrDetails = $this->where("url_name", $charProduct)->find();
+		return $arrDetails;
 		
 	}
 }

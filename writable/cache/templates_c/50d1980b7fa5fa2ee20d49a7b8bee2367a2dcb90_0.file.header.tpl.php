@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-02-16 12:22:55
+/* Smarty version 4.1.0, created on 2022-02-21 09:56:58
   from 'C:\wamp64\www\Local-Bio\app\Views\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_620d40ffe9a8d4_88580795',
+  'unifunc' => 'content_6213b64a45d189_63262515',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50d1980b7fa5fa2ee20d49a7b8bee2367a2dcb90' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\header.tpl',
-      1 => 1645035774,
+      1 => 1645083054,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_620d40ffe9a8d4_88580795 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6213b64a45d189_63262515 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,7 +33,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1176621226620d40ffe8a162_80900363', "css");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17522741916213b64a44cf56_23076898', "css");
 ?>
 
 
@@ -105,12 +105,12 @@ echo base_url('assets/css/shop.css');?>
     <!--FIN NAVBAR-->
 <?php }
 /* {block "css"} */
-class Block_1176621226620d40ffe8a162_80900363 extends Smarty_Internal_Block
+class Block_17522741916213b64a44cf56_23076898 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'css' => 
   array (
-    0 => 'Block_1176621226620d40ffe8a162_80900363',
+    0 => 'Block_17522741916213b64a44cf56_23076898',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

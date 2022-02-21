@@ -53,6 +53,7 @@ class Users extends BaseController{
                     'errors' => [
                         'max_length' => 'Le {field} doit être de maximum trente caractères',
                         'min_length' => 'Le {field} doit être de minimum de cinq caractères',
+						'required' => 'Le {field} doit être rempli',
                     ],
                 ],
 			],
@@ -61,19 +62,27 @@ class Users extends BaseController{
 			if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
 				if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
 					$objUsersModel = new Users_model(); // Instanciation du modèle
-					$objUsers     = new \App\Entities\Users_entity(); // Instanciation de l'entité
+					$userconnect = $objUsersModel->login($mail, $password);
+					echo('1');
+					if($arrResult === false){
+						$this->_arrData['strError'] = "Connexion impossible";
+						echo('2');
+					}else{
+					$objUsers = new \App\Entities\Users_entity(); // Instanciation de l'entité
 					$objUsers->fill($this->request->getPost());
-					return redirect()->to('/Users'); // redirection vers l'action par défaut du controller Product
+							echo('3');			
+					}
+					return redirect()->to(''); // redirection vers l'action par défaut du controller Product
 				}else{
 					$arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
 				}
 			}
 			
-        $this->_data['arrErrors'] = $arrErrors;
-
+        
+$this->_data['arrErrors'] = $arrErrors;
 		$this->_data['form_open'] = form_open("users/connect");
 		$this->_data['label_email']     = form_label("Adresse mail : ", "user_email");
-		$this->_data['form_email'] = form_input ("user_email", "", "id='user_email'");
+		$this->_data['form_email'] = form_input ("user_email", "", "id='user_email' class='col-sm-2'");
 		$this->_data['label_password']     = form_label("Mot de passe : ", "user_password");
 		$this->_data['form_password'] = form_input ("user_password", "", "id='user_password'", "password");
 		$this->_data['form_submit' ]= form_submit("submit", "Se connecter");

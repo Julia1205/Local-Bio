@@ -39,12 +39,12 @@ class Users_model extends Model{
 		//var_dump($arrPost); die;
 		$password = $arrPost['user_password'];
 		$mail = $arrPost['user_email'];
-		$userconnect = $this->where("user_email", $mail)->find();
-		
-		
-		return $userconnect;
-
-
-		
+		$userconnect = $this->where("user_email", $mail, "user_password", $password)->find();
+			if (password_verify($password , $userconnect['user_password'])){
+				return $userconnect;
+			}else{
+				return false;
+			}
 	}
+
 }
