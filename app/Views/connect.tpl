@@ -7,7 +7,15 @@
 
 	{block name="content"}
 		<div class="container">
-		{$arrErrors}
+		{if count($arrErrors) > 0}
+			<div class="error">
+			
+					{foreach from=$arrErrors item=$strError}
+					   <p>{$strError}</p>
+					{/foreach}
+			</div>
+		{/if}
+
 			
 		
 			{$form_open}

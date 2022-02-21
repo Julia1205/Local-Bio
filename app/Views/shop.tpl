@@ -23,7 +23,21 @@
             <input type="text" placeholder="Recherche de produit" class="RechercherProduit">
         </div>
 		<div class="container">
+		                <div class="col-lg-offset-1 col-lg-1">
+                    <div class="Categorie">
+                        <h4 class="TitleCategorie">Catégorie</h4>
+                        <div class="ChoixCategorie">
+                            <ul class="ChoixCategorieListe">
+                                <li class="ChoixCategorieNom"><i class="fas fa-angle-right"></i><a href="{base_url('index.php/shop/boutique/2')}">légumes</a></li>
+                                <li class="ChoixCategorieNom"><i class="fas fa-angle-right"></i><a href="{base_url('index.php/shop/boutique/1')}">fruits</a></li>
+                                <li class="ChoixCategorieNom"><i class="fas fa-angle-right"></i><a href="{base_url('index.php/shop/boutique/3')}">épices</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
 					<div class="row">
+					
 						{foreach from=$products item=objProduct}
 							<div class="col-lg-2">
 									<div class="BorderBoxGreen">
@@ -38,6 +52,7 @@
 									</div>
 								</div>			
 						{/foreach}
+						
 					</div>
 			</div>
 		</div>

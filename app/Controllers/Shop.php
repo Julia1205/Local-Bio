@@ -51,9 +51,9 @@ class Shop extends BaseController{
 		$objShop = new shop_entity;
 		$objShopModel = new shop_model;
 		if($charName != null){
-		$this->_data['product'] = $objShopModel->findDetails($charName);
-		var_dump($this->_data['product']); die;
-		$this->display('details.tpl');
+			$this->_data['product'] = $objShopModel->findDetails($charName);
+			//var_dump($this->_data['product']); die;
+			$this->display('details.tpl');
 		}
 		
 		

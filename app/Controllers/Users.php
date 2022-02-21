@@ -58,12 +58,13 @@ class Users extends BaseController{
                 ],
 			],
 		);
+		
 		$arrErrors = array();
 			if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
 				if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
 					$objUsersModel = new Users_model(); // Instanciation du modèle
 					$userconnect = $objUsersModel->login($mail, $password);
-					echo('1');
+					
 					if($arrResult === false){
 						$this->_arrData['strError'] = "Connexion impossible";
 						echo('2');
@@ -79,10 +80,10 @@ class Users extends BaseController{
 			}
 			
         
-$this->_data['arrErrors'] = $arrErrors;
+		$this->_data['arrErrors'] = $arrErrors;
 		$this->_data['form_open'] = form_open("users/connect");
 		$this->_data['label_email']     = form_label("Adresse mail : ", "user_email");
-		$this->_data['form_email'] = form_input ("user_email", "", "id='user_email' class='col-sm-2'");
+		$this->_data['form_email'] = form_input ("user_email", "", "id='user_email'");
 		$this->_data['label_password']     = form_label("Mot de passe : ", "user_password");
 		$this->_data['form_password'] = form_input ("user_password", "", "id='user_password'", "password");
 		$this->_data['form_submit' ]= form_submit("submit", "Se connecter");
@@ -103,6 +104,8 @@ $this->_data['arrErrors'] = $arrErrors;
 		
 
 	}
+	
+	
 	public function create(){
 		helper('form');
 		$this->_data['title'] = "S'inscrire";
