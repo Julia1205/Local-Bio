@@ -6,16 +6,16 @@
 
 
 {block name="content"}
-	
-{if count($arrErrors) > 0}
-        <div class="error">
-        
-                {foreach from=$arrErrors item=$strError}
-                   <p>{$strError}</p>
-                {/foreach}
-        </div>
-{/if}
-    <div class="container">
+	    <div class="container">
+
+		{if count($arrErrors) > 0}
+				<div class="error">
+				
+						{foreach from=$arrErrors item=$strError}
+						   <p>{$strError}</p>
+						{/foreach}
+				</div>
+		{/if}
         <div class="row">
             <div class="col-lg-offset-4 col-lg-4">
 				{$form_open}

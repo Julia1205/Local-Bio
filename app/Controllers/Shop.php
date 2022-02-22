@@ -33,26 +33,46 @@ class Shop extends BaseController{
 *
 **/
 	public function boutique($intCat=null){
-
+		//Assignation du titre
 		$this->_data['title'] = "Boutique";
+		//Instanciation de l'objet entité boutique
 		$objShop = new shop_entity;
+		//Instanciation de l'objet model boutique
 		$objShopModel = new shop_model;
-		
+		//vérification si présence du paramètre dans l'URL
 		if($intCat != null){
+			//Si le paramètre existe, utiliser la fonction findByCat
 			$this->_data['products'] = $objShopModel->findByCat($intCat);
 		}else{
+			//Si le paramètre n'existe pas, utiliser la fonction findAll
 			$this->_data['products'] = $objShopModel->findAll();
 		}
+		//Appel de l'affichage
 		$this->display('shop.tpl');
 	}
-	
+/**
+*	@brief 		fonction retournant les détails du produit de la base de données en fonction de son nom
+* 	@details 
+*	<p>Cette fonction permet de rechercher via une requête, 
+*		les détails d'un produit présent dans la base de données</p>
+*	@param 	$charName string
+*	@return	Tableau contenant les valeurs présentes dans la base de données (sous-tableaux)
+*
+**/
+
 	public function details($charName=null){
+		//Assignation du titre 
 		$this->_data['title'] = "Details";
+		//Instanciation de l'objet entité boutique
 		$objShop = new shop_entity;
+		//Instanciation de l'objet model boutique
 		$objShopModel = new shop_model;
+		//Vérification si le nom du produit est présent dans l'URL
 		if($charName != null){
+			//Si présence, utiliser la fonction findDetails
 			$this->_data['product'] = $objShopModel->findDetails($charName);
 			//var_dump($this->_data['product']); die;
+			//Demande d'affichage de la page de details
 			$this->display('details.tpl');
 		}
 		

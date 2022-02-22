@@ -35,13 +35,15 @@ class Users extends BaseController{
 	public function connect(){
 		helper('form');
 		$this->_data['title'] = "Se connecter";
-		        // Chargement de la librairie
+		// Chargement de la librairie
         $validation =  \Config\Services::validation();
-
+		//Définition des règles de vérification des champs
 		$validation->setRules([
                 'user_email' => [
                     'label'  => 'e-mail',
+					//Attribution de required pour obligation de saisie, valid_email pour vérification du format
                     'rules'  => 'required|valid_email',
+					//Attribution des messages d'erreurs individualisés pour chaque condition
                     'errors' => [
                         'required' => 'Le {field} est obligatoire',
 						'valid_email' => 'Le {field} doit être au format valide',
@@ -51,6 +53,7 @@ class Users extends BaseController{
                     'label'  => 'mot de passe',
                     'rules'  => 'required|max_length[30]|min_length[5]',
                     'errors' => [
+					//Attribution des messages d'erreurs individualisés pour chaque condition
                         'max_length' => 'Le {field} doit être de maximum trente caractères',
                         'min_length' => 'Le {field} doit être de minimum de cinq caractères',
 						'required' => 'Le {field} doit être rempli',
@@ -60,10 +63,10 @@ class Users extends BaseController{
 		);
 		
 		$arrErrors = array();
-			if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
+			/*if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
 				if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
 					$objUsersModel = new Users_model(); // Instanciation du modèle
-					$userconnect = $objUsersModel->login($mail, $password);
+					$userconnect = $objUsersModel->login($mail, $password);//Utilisation de la fonction login
 					
 					if($arrResult === false){
 						$this->_arrData['strError'] = "Connexion impossible";
@@ -77,6 +80,12 @@ class Users extends BaseController{
 				}else{
 					$arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
 				}
+			}*/
+			if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
+				var_dump($this->request->getPost());
+			}else{
+				echo('2');
+				$arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
 			}
 			
         
@@ -104,16 +113,24 @@ class Users extends BaseController{
 		
 
 	}
-	
+/**
+*	@brief 		fonction retournant permettant la création d'un utilisateur
+* 	@details 
+*	<p>Cette fonction permet au visiteur de se créer un compte</p>
+*
+**/
+
 	
 	public function create(){
+		//Ajout du helper de formulaire
 		helper('form');
+		//assignation du titre
 		$this->_data['title'] = "S'inscrire";
 		
 			
         // Chargement de la librairie
         $validation =  \Config\Services::validation();
-		
+		//Définition des règles de validation du formulaire
 		$validation->setRules([
                 'user_name' => [
                     'label'  => 'nom',
@@ -173,7 +190,7 @@ class Users extends BaseController{
                 ],
 				'user_cp' => [
                     'label'  => 'code postal',
-                    'rules'  => 'required|numeric|max_length[5]|min_length[5]',
+                    'rules'  => 'required',/*|numeric|max_length[5]|min_length[5],*/
                     'errors' => [
                         'required' => 'Le {field} est obligatoire',
                         'numeric' => 'Le {field} doit être des chiffres',
@@ -186,7 +203,7 @@ class Users extends BaseController{
                     'rules'  => 'required|alpha',
                     'errors' => [
                         'required' => 'La {field} est obligatoire',
-                        'alpha' => 'La {field} doit être des chiffres',
+                        'alpha' => 'La {field} ne doit contenir des chiffres',
                     ],
                 ],
 				'user_phone' => [
@@ -204,17 +221,22 @@ class Users extends BaseController{
 
             ]
         );
-			
+		//assignation des erreurs à transmettre à la vue
         $arrErrors = array();
+		
         if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
+				$this->_data['title'] = "S'inscrire";
+
             if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
                 $objUsersModel = new Users_model(); // Instanciation du modèle
                 $objUsers     = new \App\Entities\Users_entity(); // Instanciation de l'entité
 	            $objUsers->fill($this->request->getPost());
                 $objUsersModel->save($objUsers); // On sauvegarde l'objet
-                return redirect()->to('/Users'); // redirection vers l'action par défaut du controller Product
+				var_dump($this->request->getPost());die;
+                return redirect()->to('/Pages'); // redirection vers l'action par défaut du controller Product
             }else{
                 $arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
+				var_dump($this->request->getPost());die;
             }
         }
 			

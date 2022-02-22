@@ -31,7 +31,9 @@ class Pages extends BaseController{
 *	<p>Cette fonction permet d'attribuer le titre de la page et d'afficher le template correspondant
 **/
 	public function accueil(){
+		//Assignation du titre
 		$this->_data['title'] = "Accueil";		
+		//Demande d'affichage de la page
 		$this->display("accueil.tpl");
 
 	}
@@ -42,7 +44,9 @@ class Pages extends BaseController{
 **/
 
 	public function about(){
+		//Assignation du titre
 		$this->_data['title'] = "A propos";
+		//Demande d'affichage de la page
 		$this->display("about.tpl");
 	}
 }
