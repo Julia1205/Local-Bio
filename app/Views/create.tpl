@@ -29,8 +29,8 @@
 					{$form_password}
 				{$label_passwordConfirmed}
 					{$form_passwordConfirmed}
-				{$label_number}
-					{$form_number}
+				{$label_houseNumber}
+					{$form_houseNumber}
 				{$label_address}
 					{$form_address}
 				{$label_city}

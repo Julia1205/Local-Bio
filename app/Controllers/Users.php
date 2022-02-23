@@ -124,6 +124,7 @@ class Users extends BaseController{
 	public function create(){
 		//Ajout du helper de formulaire
 		helper('form');
+		helper('array');
 		//assignation du titre
 		$this->_data['title'] = "S'inscrire";
 		
@@ -142,18 +143,19 @@ class Users extends BaseController{
                 ],
                 'user_firstname' => [
                     'label'  => 'prénom',
-                    'rules'  => 'required|alpha',
+                    'rules'  => 'required|alpha_numeric_space',
                     'errors' => [
                         'required' => 'Le {field} est obligatoire',
-                        'alpha' => 'Le {field} doivent être des lettres',
+                        'alpha_numeric_space' => 'Le {field} doivent être des lettres ni contenir d\'accent',
                     ],
                 ],
 				'user_email' => [
                     'label'  => 'mail',
-                    'rules'  => 'required|valid_email',
+                    'rules'  => 'required|valid_email|is_unique[user.user_email]',
                     'errors' => [
                         'required' => 'Le {field} est obligatoire',
                         'valid_email' => 'Le {field} doit être au format valide',
+						'is_unique' => 'le {field} semble être déjà utilisé',
                     ],
                 ],
 				'user_password' => [
@@ -166,13 +168,14 @@ class Users extends BaseController{
                 ],
 				'user_passwordConfirmed' => [
                     'label'  => 'mot de passe',
-                    'rules'  => 'required|alpha',
+                    'rules'  => 'required|alpha_numeric|matches[user_password]',
                     'errors' => [
                         'required' => 'Le {field} est obligatoire',
-                        'alpha' => 'Le {field} doit être identique au mot de passe saisi',
+                        'alpha_numeric' => 'Le {field} ne doit contenir que des lettres et des chiffres',
+						'matches' => 'le {field} doit correspondre au mot de passe'
                     ],
                 ],
-				'user_number' => [
+				'user_houseNumber' => [
                     'label'  => 'numéro de rue',
                     'rules'  => 'required|numeric',
                     'errors' => [
@@ -182,15 +185,15 @@ class Users extends BaseController{
                 ],
 				'user_address' => [
                     'label'  => 'adresse',
-                    'rules'  => 'required|alpha',
+                    'rules'  => 'required|alpha_numeric_space',
                     'errors' => [
                         'required' => 'Le {field} est obligatoire',
-                        'alpha' => 'L\'{field} doit être identique au mot de passe saisi',
+                        'alpha_numeric_space' => 'L\'{field} doit être composé uniquement de lettres et ne pas contenir d\'accents',
                     ],
                 ],
 				'user_cp' => [
                     'label'  => 'code postal',
-                    'rules'  => 'required',/*|numeric|max_length[5]|min_length[5],*/
+                    'rules'  => 'required|numeric|max_length[5]|min_length[5]',
                     'errors' => [
                         'required' => 'Le {field} est obligatoire',
                         'numeric' => 'Le {field} doit être des chiffres',
@@ -230,13 +233,37 @@ class Users extends BaseController{
             if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
                 $objUsersModel = new Users_model(); // Instanciation du modèle
                 $objUsers     = new \App\Entities\Users_entity(); // Instanciation de l'entité
-	            $objUsers->fill($this->request->getPost());
+				$intHouseNumber = $this->request->getPost(['user_houseNumber'][0]); 
+				$charAddress = $this->request->getPost(['user_address'][0]);
+				$charUserAddress = $intHouseNumber.", ".$charAddress;
+				$charUserName = $this->request->getPost(['user_name'][0]);
+				$charUserFirstName = $this->request->getPost(['user_firstname'][0]);
+				$charUserMail = $this->request->getPost(['user_email'][0]);
+				$charUserCity  = $this->request->getPost(['user_city'][0]);
+				$intUserCP = $this->request->getPost(['user_cp'][0]);
+				$intUserPhone = $this->request->getPost(['user_phone'][0]);
+				$charUserPasswordHashed = $objUsersModel->hashing($this->request->getPost(['user_password'][0]));
+				
+				$arrUser = [
+							'user_address' => $charUserAddress,
+							'user_name' => $charUserName,
+							'user_firstname' => $charUserFirstName,
+							'user_email' => $charUserMail,
+							'user_password' => $charUserPasswordHashed,
+							'user_city' => $charUserCity,
+							'user_cp' => $intUserCP,
+							'user_phone' => $intUserPhone,
+						];
+
+	            $objUsers->fill($arrUser);
+				var_dump($this->request->getPost());
+				
+				var_dump($objUsers);
+
                 $objUsersModel->save($objUsers); // On sauvegarde l'objet
-				var_dump($this->request->getPost());die;
-                return redirect()->to('/Pages'); // redirection vers l'action par défaut du controller Product
+                //return redirect()->to('/Pages/accueil'); // redirection vers l'action par défaut du controller Product
             }else{
                 $arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
-				var_dump($this->request->getPost());die;
             }
         }
 			
@@ -245,6 +272,7 @@ class Users extends BaseController{
 		$this->_data['form_open'] = form_open("users/create");
 		
 		$this->_data['label_name']     = form_label("Nom : ", "user_name");
+		
 		$this->_data['form_name'] = form_input ("user_name", $this->request->getPost('user_name')??'', "id='user_name'");
 		
 		$this->_data['label_firstname']     = form_label("Prénom : ", "user_firstname");
@@ -259,8 +287,8 @@ class Users extends BaseController{
 		$this->_data['label_passwordConfirmed']     = form_label("Confirmez votre mot de passe : ", "user_passwordConfirmed");
 		$this->_data['form_passwordConfirmed'] = form_input ("user_passwordConfirmed", $this->request->getPost('user_passwordConfirmed')??'', "id='user_passwordConfirmed'", "password");
 		
-		$this->_data['label_number']     = form_label("Numéro de rue : ", "user_number");
-		$this->_data['form_number'] = form_input ("user_number", $this->request->getPost('user_number')??'', "id='user_number'");
+		$this->_data['label_houseNumber']     = form_label("Numéro de rue : ", "user_houseNumber");
+		$this->_data['form_houseNumber'] = form_input ("user_houseNumber", $this->request->getPost('user_houseNumber')??'', "id='user_houseNumber'");
 
 		$this->_data['label_address']     = form_label("Rue : ", "user_address");
 		$this->_data['form_address'] = form_input ("user_address", $this->request->getPost('user_address')??'', "id='user_address'");

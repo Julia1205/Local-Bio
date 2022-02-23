@@ -46,5 +46,16 @@ class Users_model extends Model{
 				return false;
 			}
 	}
+	
+	public function hashing($userPassword){
+		$hashedPwd = password_hash($userPassword , PASSWORD_DEFAULT);
+		return $hashedPwd;
+	}
+	
+	public function verify($userPassword){
+		$resultCheck = $this->where("user_password", $userPassword)->find;
+		$clearedPwd = password_verify($userPassword), 
+		return $clearedPwd;
+	}
 
 }

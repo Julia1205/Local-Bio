@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-02-22 09:06:42
+/* Smarty version 4.1.0, created on 2022-02-23 03:29:43
   from 'C:\wamp64\www\Local-Bio\app\Views\create.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6214fc029a1343_15098694',
+  'unifunc' => 'content_6215fe87e66077_52776244',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bdb99d119d426bb3e176930cd48a6d881c132342' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\create.tpl',
-      1 => 1645542400,
+      1 => 1645608583,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6214fc029a1343_15098694 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6215fe87e66077_52776244 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9535322356214fc0298e796_38916179', "css");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1120796496215fe87e543a9_71372200', "css");
 ?>
 
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5416083276214fc02991845_05959166', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4104137176215fe87e57b97_25132838', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "layout.tpl");
 }
 /* {block "css"} */
-class Block_9535322356214fc0298e796_38916179 extends Smarty_Internal_Block
+class Block_1120796496215fe87e543a9_71372200 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'css' => 
   array (
-    0 => 'Block_9535322356214fc0298e796_38916179',
+    0 => 'Block_1120796496215fe87e543a9_71372200',
   ),
 );
 public $append = 'true';
@@ -56,12 +56,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "css"} */
 /* {block "content"} */
-class Block_5416083276214fc02991845_05959166 extends Smarty_Internal_Block
+class Block_4104137176215fe87e57b97_25132838 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_5416083276214fc02991845_05959166',
+    0 => 'Block_4104137176215fe87e57b97_25132838',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -109,9 +109,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 					<?php echo $_smarty_tpl->tpl_vars['form_passwordConfirmed']->value;?>
 
-				<?php echo $_smarty_tpl->tpl_vars['label_number']->value;?>
+				<?php echo $_smarty_tpl->tpl_vars['label_houseNumber']->value;?>
 
-					<?php echo $_smarty_tpl->tpl_vars['form_number']->value;?>
+					<?php echo $_smarty_tpl->tpl_vars['form_houseNumber']->value;?>
 
 				<?php echo $_smarty_tpl->tpl_vars['label_address']->value;?>
 
