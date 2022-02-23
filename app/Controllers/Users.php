@@ -70,7 +70,7 @@ class Users extends BaseController{
 					$strpasswordField = $this->request->getPost(['user_password']);
 					//var_dump($this->_SESSION); die;
 					$userconnect = $objUsersModel->login($strmailField, $strpasswordField);//Utilisation de la fonction login
-					
+					var_dump( $strpasswordField);die();
 					if($arrResult === false){
 						$this->_arrData['strError'] = "Connexion impossible";
 						echo('2');

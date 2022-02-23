@@ -43,14 +43,17 @@ class Users_model extends Model{
 **/
 	
 	public function login($strmailField, $strpasswordField){
+		//var_dump($strpasswordField);die();
 		//var_dump($arrPost); die;
 		//$mail = $strmailField;
 		//$userId = $this->where("user_id", 26);
 		//$password = password_verify($strpasswordField, ;
 		//$truePassword = $this->where('user_password'), 
 		//password_verify($strpasswordField);
-		//$userconnect = $this->getWhere(["user_email" => $mail], "user_password", $password);
-						//var_dump($userId);
+		$loginPasswordHashed = $this->hashing($strpasswordField["user_password"]);
+		$array = ['user_email' => $strmailField, 'user_password' => $loginPasswordHashed ];
+		$userconnect = $this->getWhere($array);
+						
 		$prout = $this->select()->get();
 		var_dump($prout);
 						die;
