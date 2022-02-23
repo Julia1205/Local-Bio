@@ -1,0 +1,99 @@
+/*BANDEAU CONNEXION*/
+
+.BandeauConnexion{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: #76A713;
+    color: white;
+    height: 3rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.IconLogin{
+    display: inline-flex;
+    float: right;
+}
+
+.fa-user{
+    margin-right: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.fa-shopping-cart{
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+}
+
+.fa-solid{
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+}
+
+.Bienvenue{
+    position: absolute;
+}
+
+@media screen and (max-width: 736px) 
+{ 
+    .BandeauConnexion{
+        font-size: 15px;
+        height: 2rem;
+    }
+
+}
+/*NAVBAR*/
+
+.bg-light{
+    background-color: white !important;
+}
+
+.btn.btn-outline-success{
+    border-color: #76A713;
+    color: #76A713;
+}
+.btn.btn-outline-success:hover{
+    background-color: #76A713;
+    color: white;
+}
+
+a.nav-link{
+    font-size: 1.5rem;
+    color: black;
+}
+
+@media screen and (max-width: 768px) 
+{ 
+    a.nav-link{
+        font-size: 1rem;
+    }
+}
+
+.LogoNavBar{
+    height: 50px;
+    width: 200px;
+    margin-right: 240px;
+}
+/*FIN NAVBAR*/
+/*BANDEAU SHOP*/
+
+.ShopBandeau{
+    padding: 0;
+}
+
+
+@media screen and (max-width: 768px) 
+{ 
+    img.img-fluid{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/*FIN BANDEAU SHOP*/

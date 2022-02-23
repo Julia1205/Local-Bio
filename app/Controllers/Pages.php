@@ -42,7 +42,6 @@ class Pages extends BaseController{
 * 	@details 
 *	<p>Cette fonction permet d'attribuer le titre de la page et d'afficher le template correspondant
 **/
-
 	public function about(){
 		//Assignation du titre
 		$this->_data['title'] = "A propos";

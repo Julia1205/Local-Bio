@@ -37,14 +37,22 @@ class Shop_model extends Model{
 *	<p>Cette fonction permet de rechercher via une requête, 
 *		la liste des produits présents dans la base de données</p>
 *	@param 	$intNumCat integer
-*	@return	Tableau contenant les produits
+*	@return	Tableau contenant les produits (sous-tableaux)
 *
 **/
 	public function findByCat($intNumCat){
 		$arrList = $this->where("category_id", $intNumCat)->findAll();
 		return $arrList;
 	}
-	
+/**
+*	@brief 		fonction retournant le détails des articles
+* 	@details 
+*	<p>Cette fonction permet de rechercher via une requête, 
+*		le détail d'un article dans la base de données</p>
+*	@param 	$charProduct varchar
+*	@return	arrDetails tableau contenant les details (sous-tableaux)
+*
+**/
 	public function findDetails($charProduct){
 		$arrDetails = $this->where("url_name", $charProduct)->find();
 		return $arrDetails;

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cardo:ital@1&family=Open+Sans:wght@300&display=swap');
+
+.BoxFooter{
+    width: 100%;
+    height: 800px;
+}
+
+.BoxImageFooter1{
+    background-image: url(../../assets/img/slider.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+}
+
+.BoxImageFooter2{
+    background-image: url(../../assets/img/Web1920-1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 100%;
+    height: 600px;
+}
+
+.BoxSubscribe{
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    width: 100%;
+}
+
+.newsletter{
+    display: flex;
+}
+
+.subscribe{
+    flex-direction: column;
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 40rem;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.abonner{
+    margin: 1rem;
+    border: none;
+    background-color: #207100;
+    height: 2rem;
+    width: 8rem;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}
+
+#inputfooter{
+    border: none;
+    border-radius: 20px;
+    height: 2rem;
+    width: 14rem;
+    font-size: 12px;
+    font-family: raleway, sans-serif;
+    text-align: center;
+    margin: 1rem;
+}*/
+
+#inputfooter {
+    outline: 2px solid #207100;
+  }*/
+
+.BoxLien{
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+    width: 100%;
+    justify-content: space-around;
+    color: white;
+    list-style-type: none;
+    margin-top: 2rem;
+}
+
+.TitleFooter{
+    text-decoration: underline #8AAC00 3px;
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.potagerPhoto{
+    height:80px;
+    width: 80px;
+}
+
+.LienFooter{
+    cursor: pointer;
+    margin-top: 1rem;
+    color: white;
+    text-decoration: none;
+}
+.BoxFooter a{
+    color: white;
+    text-decoration: none;
+}
+.BoxFooter a:visited{
+    color: white;
+}
+.BoxFooter a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .BoxFooter{
+        height: 800px;
+    }
+
+    .BoxImageFooter2{
+        background-image: none;
+        background-color: #207100;
+        height: 800px;
+    }
+
+    div.subscribe{
+        background-color: #8AAC00;
+        width: 100%;
+    }
+
+    .subscribe{
+        text-align: center;
+    }
+
+    .BoxLien{
+        flex-direction: column;
+        margin-top: 8rem;
+    }
+    
+    .TitleFooter{
+        margin-top: 2rem;
+    }
+}

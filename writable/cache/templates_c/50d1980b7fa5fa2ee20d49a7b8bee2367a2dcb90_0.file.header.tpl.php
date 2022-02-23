@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-02-21 09:56:58
+/* Smarty version 4.1.0, created on 2022-02-23 07:58:33
   from 'C:\wamp64\www\Local-Bio\app\Views\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6213b64a45d189_63262515',
+  'unifunc' => 'content_62163d89158fa9_05975862',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50d1980b7fa5fa2ee20d49a7b8bee2367a2dcb90' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\header.tpl',
-      1 => 1645083054,
+      1 => 1645624560,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6213b64a45d189_63262515 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62163d89158fa9_05975862 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,7 +33,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17522741916213b64a44cf56_23076898', "css");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_110173934062163d891416d6_02838209', "css");
 ?>
 
 
@@ -105,17 +105,22 @@ echo base_url('assets/css/shop.css');?>
     <!--FIN NAVBAR-->
 <?php }
 /* {block "css"} */
-class Block_17522741916213b64a44cf56_23076898 extends Smarty_Internal_Block
+class Block_110173934062163d891416d6_02838209 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'css' => 
   array (
-    0 => 'Block_17522741916213b64a44cf56_23076898',
+    0 => 'Block_110173934062163d891416d6_02838209',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+	<link href="<?php echo base_url('assets/css/footer.css');?>
+" rel="stylesheet" />
+	<link href="<?php echo base_url('assets/css/header.css');?>
+" rel="stylesheet"/>
+	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />

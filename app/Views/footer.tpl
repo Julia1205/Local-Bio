@@ -7,15 +7,18 @@
                     <div class="BoxSubscribe">
                         <div class="subscribe">
                             <span>Abonnez-vous a notre newsletter</span>
-                            <button class="abonner">S'abonner</button>
+                            <div class="newsletter">
+                                <input placeholder="entrer votre adresse-email" class="focus-visible-only" id="inputfooter"></input>
+                                <a href="subscribe.html/index.html" target="_blank"><button class="abonner">S'abonner</button></a>
+                            </div>
                         </div>
                     </div>
                     <div class="BoxLien">
                         <div>
                             <h4 class="TitleFooter">Liens</h4>
-                            <li class="LienFooter"><a href="index.html">Accueil</a></li>
-                            <li class="LienFooter"><a href="shop.html">Boutique</a></li>
-                            <li class="LienFooter"><a href="about.html">A propos</a></li>
+                            <li class="LienFooter"><a href="{base_url('index.php/Pages/accueil')}">Accueil</a></li>
+                            <li class="LienFooter"><a href="{base_url('index.php/shop/boutique')}">Boutique</a></li>
+                            <li class="LienFooter"><a href="{base_url('index.php/Pages/about')}">A propos</a></li>
                         </div>
                         <div>
                             <h4 class="TitleFooter">Informations</h4>
