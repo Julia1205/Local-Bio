@@ -51,6 +51,8 @@ class Users_model extends Model{
 		//password_verify($strpasswordField);
 		//$userconnect = $this->getWhere(["user_email" => $mail], "user_password", $password);
 						//var_dump($userId);
+		$prout = $this->select()->get();
+		var_dump($prout);
 						die;
 
 
