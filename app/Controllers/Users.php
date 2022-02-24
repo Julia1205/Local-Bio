@@ -42,7 +42,7 @@ class Users extends BaseController{
                 'user_email' => [
                     'label'  => 'e-mail',
 					//Attribution de required pour obligation de saisie, valid_email pour vérification du format
-                    'rules'  => 'required|valid_email',
+                    'rules'  => 'required|valid_email|is_unique[user.user_email]',
 					//Attribution des messages d'erreurs individualisés pour chaque condition
                     'errors' => [
                         'required' => 'Le {field} est obligatoire',
@@ -64,6 +64,26 @@ class Users extends BaseController{
 		
 		$arrErrors = array();
 			if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
+				$objUsersModel = new Users_model();
+				$strMailField = $this->request->getPost('user_email');
+				$strPasswordField = $this->request->getPost('user_password');
+				$verifiedMail = $objUsersModel->checkMail($strMailField);
+				if($verifiedMail == false){
+					$arrErrors = "Connexion impossible";
+				}elseif($verifiedMail == true){
+					$objUser = new Users_entity;
+					$User = $objUsersModel->getUser($strMailField);
+					$objUser = $User[0];
+					var_dump($objUser);die;
+
+					
+
+				}
+				if($verifiedMail == true){
+					
+				}
+			var_dump($this->request->getPost());die;
+			
 				if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
 					$objUsersModel = new Users_model(); // Instanciation du modèle
 					$strmailField = $this->request->getPost(['user_email']);

@@ -26,55 +26,14 @@ class Users_model extends Model{
     // Nom du champ de la clé primaire
     protected $primaryKey    = 'user_id';
     // Champs utilisables
-    protected $allowedFields = ['user_email', 'user_password', 'user_name', 'user_firstname', 'user_address', 'user_phone'];
+    protected $allowedFields = ['user_email', 'user_password', 'user_name', 'user_firstname', 'user_address', 'user_phone', 'user_id'];
  
     // Type de retour => Chemin de l'entité à utiliser
     protected $returnType    = 'App\Entities\Users_entity';
  
     // Utilisation ou non des dates (création / modification)
     protected $useTimestamps = false;
-/**
-*	@brief 		fonction 
-* 	@details 
-*	<p></p>
-*	@param 	$arrPost array
-*	@return	userconnect 
-*
-**/
-	
-	public function login($strmailField, $strpasswordField){
-		//var_dump($strpasswordField);die();
-		//var_dump($arrPost); die;
-		//$mail = $strmailField;
-		//$userId = $this->where("user_id", 26);
-		//$password = password_verify($strpasswordField, ;
-		//$truePassword = $this->where('user_password'), 
-		//password_verify($strpasswordField);
-		$loginPasswordHashed = $this->hashing($strpasswordField["user_password"]);
-		$array = ['user_email' => $strmailField, 'user_password' => $loginPasswordHashed ];
-		$userconnect = $this->getWhere($array);
-						
-		$prout = $this->select()->get();
-		var_dump($prout);
-						die;
 
-
-		if ($mail == $userconnect){
-			if($password == $truePassword){
-			}else{
-				
-			}
-		}else{
-			
-		}
-		$userconnect = $this->where("user_email", $mail)->find();
-			if (password_verify($password , $userconnect['user_password'])){
-				return $userconnect;
-			}else{
-				return false;
-			}
-	}
-	
 /**
 *	@brief 		fonction hashant le mot de passe
 * 	@details 
@@ -88,19 +47,73 @@ class Users_model extends Model{
 		return $hashedPwd;
 	}
 /**
-*	@brief 		fonction vérifiant le mot de passe
+*	@brief 		fonction vérifiant l'email de connexion
 * 	@details 
-*	<p>Cette fonction permet de comparer le mot de passe saisi par l'utilisateur 
-*	dans la page de connexion et sa version hashée dans la base de données</p>
-*	@param 	$userPostPassword varchar
-*	@return	clearedPwd varchar
+*	<p>Cette fonction permet de vérifier si l'email </p>
+*	@param 	$userPassword varchar
+*	@return	hashedPwd varchar
 *
 **/
 
-	public function verify($userPostPassword){
-		$resultCheck = $this->where("user_password", $userPassword)->find;
-		$clearedPwd = password_verify($userPassword); 
-		return $clearedPwd;
+	public function checkMail($strmailField){
+		$mail = $strmailField;
+		$usermail = $this->select('user_email')->where("user_email", $mail)->find();
+		if($usermail == 0){
+			$userConnect = false;
+			return $userConnect;
+			echo('hello');
+		}elseif($usermail != 0){
+			$userConnect = true;
+			return $userConnect;
+		}
 	}
+	public function getUser($strMailField){
+		$mail = $strMailField; 
+		$user = $this->select('user_email, user_password, user_id')->where("user_email", $mail)->find();
+		return $user;
+	}
+		//$userId = $this->where("user_id", 26);
+		//$password = password_verify($strpasswordField, ;
+		//$truePassword = $this->where('user_password'), 
+		//password_verify($strpasswordField);
+		//$loginPasswordHashed = $this->hashing($strpasswordField["user_password"]);
+		//$array = ['user_email' => $strmailField, 'user_password' => $loginPasswordHashed ];
+		//$userconnect = $this->getWhere($array);
+						
+		//$prout = $this->select()->get();
+		//var_dump($prout);
+						//die;
+
+
+		//if ($mail == $userconnect){
+			//if($password == $truePassword){
+			//}else{
+				
+			//}
+		//}else{
+			
+			//partie proposée par julien
+		//}
+		//$userconnect = $this->where("user_email", $mail)->find();
+			//if (password_verify($password , $userconnect['user_password'])){
+				//return $userconnect;
+			//}else{
+				//return false;
+			//}
+		// $mail = $strmailField;
+		// $arrUser = $this->where("user_email", $mail)->find();
+		// return $arrUser;
+			
+			
+
+	//public function checkmail($mailField, $strPassword){
+		//$mail = $mailField;
+		//$password = 
+		//$userconnect = $this->where("user_email", $mail)->find();
+			//if (password_verify($password , $userconnect['user_password'])){
+			//return $userconnect[0];
+			//}else{
+				//return false;
+			//}
 
 }
