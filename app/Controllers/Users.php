@@ -72,9 +72,16 @@ class Users extends BaseController{
 					$arrErrors = "Connexion impossible";
 				}elseif($verifiedMail == true){
 					$objUser = new Users_entity;
-					$User = $objUsersModel->getUser($strMailField);
-					$objUser = $User[0];
-					var_dump($objUser);die;
+					$UserPassword = $objUsersModel->getUserPassword($strMailField);
+					$objUser = $UserPassword[0];
+					$verifiedPassword = $objUsersModel->checkPassword($strPasswordField, $objUser->user_password);
+					if ($verifiedPassword == true){
+						$User = $objUsersModel->getFullUser($objUser->user_email);
+						$objUser = $User[0];
+						//$sessionInitialize = $this->session
+						var_dump($objUser); die;
+					}
+					
 
 					
 
@@ -269,6 +276,7 @@ class Users extends BaseController{
 				$charUserCity  = $this->request->getPost(['user_city'][0]);
 				$intUserCP = $this->request->getPost(['user_cp'][0]);
 				$intUserPhone = $this->request->getPost(['user_phone'][0]);
+				$prout = $this->request->getPost(['user_password'][0]);
 				$charUserPasswordHashed = $objUsersModel->hashing($this->request->getPost(['user_password'][0]));
 				
 				//Re-création d'un tableau afin de compléter l'entité selon la base de données

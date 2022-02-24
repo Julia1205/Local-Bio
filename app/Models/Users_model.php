@@ -43,7 +43,7 @@ class Users_model extends Model{
 *
 **/
 	public function hashing($userPassword){
-		$hashedPwd = password_hash($userPassword , PASSWORD_DEFAULT);
+		$hashedPwd = password_hash($userPassword, PASSWORD_DEFAULT);
 		return $hashedPwd;
 	}
 /**
@@ -67,10 +67,28 @@ class Users_model extends Model{
 			return $userConnect;
 		}
 	}
-	public function getUser($strMailField){
+	public function getUserPassword($strMailField){
 		$mail = $strMailField; 
 		$user = $this->select('user_email, user_password, user_id')->where("user_email", $mail)->find();
 		return $user;
+	}
+	
+	public function checkPassword($clearPassword, $hashedPassword){
+		$passwordField = $clearPassword;
+		$bddPassword = $hashedPassword;
+		$oups = "oups";
+		if(password_verify($passwordField, $bddPassword)){
+			return true;
+		}else{
+			return false;
+		}
+		return $oups;
+	}
+	
+	public function getFullUser($strMail){
+		$mail = $strMail;
+		$userIdentity = $this->select('user_id, user_firstname, user_email')->where("user_email", $mail)->find();
+		return $userIdentity;
 	}
 		//$userId = $this->where("user_id", 26);
 		//$password = password_verify($strpasswordField, ;
