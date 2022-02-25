@@ -41,7 +41,7 @@ class BaseController extends Controller
      */
     protected $helpers = [];
     protected $_data = [];
-	protected $_SESSION = [];
+	protected $session = [];
 
     /**
      * Constructor.
@@ -50,7 +50,8 @@ class BaseController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-		//$session = \Config\Services::session($config);
+		//Initialisation de la session
+		$this->session = session();
 
         // Preload any models, libraries, etc, here.
 		require_once(APPPATH.'smarty/libs/Smarty.class.php');
@@ -71,6 +72,5 @@ class BaseController extends Controller
 		//var_dump($this->_data);
         //$this->_smarty->debugging = true;
         $this->_smarty->display($strTemplate);
-        // E.g.: $this->session = \Config\Services::session();
     }
 }

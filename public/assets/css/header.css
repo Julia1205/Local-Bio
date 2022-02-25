@@ -12,7 +12,22 @@
     top: 0;
     z-index: 1000;
 }
+.NavBarBox{
+    background-color: white !important;
+} 
 
+.navbar {
+    background-color: white !important;
+}
+.navbar-expand-lg {
+    background-color: white !important;
+}
+.navbar-light {
+    background-color: white !important;
+}
+.bg-light{
+    background-color: white !important;
+}
 .IconLogin{
     display: inline-flex;
     float: right;

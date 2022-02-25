@@ -25,17 +25,35 @@
 
 <body>
     <!--BANDEAU CONNEXION-->
-    <div class="BandeauConnexion">
-        <div class="container">
-            <span>Bienvenue dans votre magasin</span>
-            <div class="IconLogin">
+	
+	{if (isset($smarty.session.user_id))}
+			<div class="BandeauConnexion">
+			<div class="container">
+				<span>Bienvenue dans votre magasin</span>
+				<div class="IconLogin">
+					<a href="{base_url('index.php/users/connect')}"><i class="fas fa-user"></i></a>
+					<a href="{base_url('index.php/users/disconnect')}"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+					<a href="{base_url('index.php/shop/')}"><i class="fas fa-shopping-cart"></i></a>
+				</div>
+			</div>
+		</div>
 
-                <a href="{base_url('index.php/users/connect')}"><i class="fas fa-user"></i></a>
-                <a href="panier.html"><i class="fas fa-shopping-cart"></i></a>
 
-            </div>
-        </div>
-    </div>
+	{else}
+		<div class="BandeauConnexion">
+			<div class="container">
+				<span>Bienvenue dans votre magasin</span>
+				<div class="IconLogin">
+
+					<a href="{base_url('index.php/users/connect')}"><i class="fas fa-user"></i></a>
+					<a href="{base_url('index.php/shop/')}"><i class="fas fa-shopping-cart"></i></a>
+
+				</div>
+			</div>
+		</div>
+
+	{/if}
+
     <!--FIN BANDEAU CONNEXION-->
     <!--NAVBAR-->
     <div class="NavBarBox">

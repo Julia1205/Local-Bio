@@ -90,6 +90,14 @@ class Users_model extends Model{
 		$userIdentity = $this->select('user_id, user_firstname, user_email')->where("user_email", $mail)->find();
 		return $userIdentity;
 	}
+	
+	//public function startsession($objUser){
+		//$user = $objUser;
+		//$this->session['user_email'] = $user->user_email;
+		//$this->session['user_id'] = $user->user_id;
+		//$this->session['user_firstname'] = 
+		//var_dump($mail); die;
+	//}
 		//$userId = $this->where("user_id", 26);
 		//$password = password_verify($strpasswordField, ;
 		//$truePassword = $this->where('user_password'), 

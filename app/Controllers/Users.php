@@ -78,46 +78,18 @@ class Users extends BaseController{
 					if ($verifiedPassword == true){
 						$User = $objUsersModel->getFullUser($objUser->user_email);
 						$objUser = $User[0];
-						//$sessionInitialize = $this->session
-						var_dump($objUser); die;
+						//$this->session->destroy();
+						//attribution des données de l'utilisateur à la session
+						$this->session->set('user_email', $objUser->user_email);
+						$this->session->set('user_firstname', $objUser->user_firstname);
+						$this->session->set('user_id', $objUser->user_id);
+						$this->_data['user_id'] = $this->session->get('user_id');
+						var_dump($this->session->get());
 					}
-					
-
-					
-
-				}
-				if($verifiedMail == true){
-					
-				}
-			var_dump($this->request->getPost());die;
-			
-				if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
-					$objUsersModel = new Users_model(); // Instanciation du modèle
-					$strmailField = $this->request->getPost(['user_email']);
-					$strpasswordField = $this->request->getPost(['user_password']);
-					//var_dump($this->_SESSION); die;
-					$userconnect = $objUsersModel->login($strmailField, $strpasswordField);//Utilisation de la fonction login
-					var_dump( $strpasswordField);die();
-					if($arrResult === false){
-						$this->_arrData['strError'] = "Connexion impossible";
-						echo('2');
-					}else{
-					$objUsers = new \App\Entities\Users_entity(); // Instanciation de l'entité
-					$objUsers->fill($this->request->getPost());
-							echo('3');			
-					}
-					return redirect()->to(''); // redirection vers l'action par défaut du controller Product
-				}else{
-					$arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
 				}
 			}
-			/*if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
-				var_dump($this->request->getPost());
-			}else{
-				echo('2');
-				$arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
-			}*/
-			
+					
+
         //attribution des erreurs à la vue
 		$this->_data['arrErrors'] = $arrErrors;
 		//attribution des fonctions CodeIgniter de formulaire à la vue
@@ -134,8 +106,10 @@ class Users extends BaseController{
 					$objUsersModel = new Users_model(); // Instanciation du modèle
 					$objUsers     = new \App\Entities\Users_entity(); // Instanciation de l'entité
 					$objUsers->fill($this->request->getPost());//Remplissage de l'entité avec les données
+					$this->_data['user_id'] = $this->session->get('user_id');
 					return redirect()->to('/Users'); // redirection vers l'action par défaut du controller Product
-					var_dump($objUsers);
+					//var_dump($objUsers);
+					
 				}else{
 					$arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
 				}
@@ -292,9 +266,9 @@ class Users extends BaseController{
 						];
 				//Remplissage de l'objet entité
 	            $objUsers->fill($arrUser);
-				var_dump($this->request->getPost());
+
 				
-				var_dump($objUsers);
+		
 				//Ajout en base de données
                 $objUsersModel->save($objUsers); 
 				//Redirection vers la page d'accueil (méthode par défaut)
@@ -344,6 +318,7 @@ class Users extends BaseController{
 		$this->_data['form_submit' ]= form_submit("submit", "Validez !");
 		$this->_data['form_close'] = form_close();
 		//Instruction d'affichage
+		var_dump($this->session->get());
 		$this->display('create.tpl');
 	}
 	
@@ -354,9 +329,13 @@ class Users extends BaseController{
 *
 **/
 
-	public function accueil(){
-		//instruction d'affichage
-		$this->display('accueil.tpl');
+	public function disconnect(){
+		//destruction de la session
+
+	
+		$this->session->destroy();
+		var_dump($this->session->get());
+		return redirect()->to('Users/connect');
 	}
 
 }

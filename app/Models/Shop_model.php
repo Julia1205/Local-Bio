@@ -43,6 +43,7 @@ class Shop_model extends Model{
 	public function findByCat($intNumCat){
 		$arrList = $this->where("category_id", $intNumCat)->findAll();
 		return $arrList;
+
 	}
 /**
 *	@brief 		fonction retournant le détails des articles

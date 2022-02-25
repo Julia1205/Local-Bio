@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-02-23 08:27:11
+/* Smarty version 4.1.0, created on 2022-02-25 09:42:47
   from 'C:\wamp64\www\Local-Bio\app\Views\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6216443fe74837_51468445',
+  'unifunc' => 'content_6218f8f7e65317_26536732',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5ddae5712b9d4228838a87c675c7df0345dda9' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\footer.tpl',
-      1 => 1645626405,
+      1 => 1645721790,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6216443fe74837_51468445 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6218f8f7e65317_26536732 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <!--FOOTER-->
     <section>
         <div class="BoxFooter">
