@@ -12,7 +12,7 @@
 					   <p>{$strError}</p>
 					{/foreach}
 			</div>
-		{/if}				
+		{/if}			
 			{$form_open}	
 				<div class="row mb-3">			
 					{$label_email}		

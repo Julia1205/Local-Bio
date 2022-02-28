@@ -58,11 +58,12 @@ class Users_model extends Model{
 	public function checkMail($strmailField){
 		$mail = $strmailField;
 		$usermail = $this->select('user_email')->where("user_email", $mail)->find();
-		if($usermail == 0){
+		if(empty ($usermail)){
 			$userConnect = false;
 			return $userConnect;
-			echo('hello');
-		}elseif($usermail != 0){
+			
+		}else{
+			
 			$userConnect = true;
 			return $userConnect;
 		}
@@ -91,55 +92,4 @@ class Users_model extends Model{
 		return $userIdentity;
 	}
 	
-	//public function startsession($objUser){
-		//$user = $objUser;
-		//$this->session['user_email'] = $user->user_email;
-		//$this->session['user_id'] = $user->user_id;
-		//$this->session['user_firstname'] = 
-		//var_dump($mail); die;
-	//}
-		//$userId = $this->where("user_id", 26);
-		//$password = password_verify($strpasswordField, ;
-		//$truePassword = $this->where('user_password'), 
-		//password_verify($strpasswordField);
-		//$loginPasswordHashed = $this->hashing($strpasswordField["user_password"]);
-		//$array = ['user_email' => $strmailField, 'user_password' => $loginPasswordHashed ];
-		//$userconnect = $this->getWhere($array);
-						
-		//$prout = $this->select()->get();
-		//var_dump($prout);
-						//die;
-
-
-		//if ($mail == $userconnect){
-			//if($password == $truePassword){
-			//}else{
-				
-			//}
-		//}else{
-			
-			//partie proposée par julien
-		//}
-		//$userconnect = $this->where("user_email", $mail)->find();
-			//if (password_verify($password , $userconnect['user_password'])){
-				//return $userconnect;
-			//}else{
-				//return false;
-			//}
-		// $mail = $strmailField;
-		// $arrUser = $this->where("user_email", $mail)->find();
-		// return $arrUser;
-			
-			
-
-	//public function checkmail($mailField, $strPassword){
-		//$mail = $mailField;
-		//$password = 
-		//$userconnect = $this->where("user_email", $mail)->find();
-			//if (password_verify($password , $userconnect['user_password'])){
-			//return $userconnect[0];
-			//}else{
-				//return false;
-			//}
-
 }
