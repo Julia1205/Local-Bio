@@ -2,20 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Raleway:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cardo:ital@1&family=Open+Sans:wght@300&display=swap');
 
+/* FOOTER */
+
 .BoxFooter{
     width: 100%;
-    height: 800px;
+    height: 600px;
+    margin-top: 15rem;
 }
 
-.BoxImageFooter1{
-    background-image: url(../../assets/img/slider.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-sizing: border-box;
-    width: 100%;
-    height: 200px;
-}
 
 .BoxImageFooter2{
     background-image: url(../../assets/img/Web1920-1.png);
@@ -32,10 +26,6 @@
     justify-content: center;
     height: 10rem;
     width: 100%;
-}
-
-.newsletter{
-    display: flex;
 }
 
 .subscribe{
@@ -63,21 +53,6 @@
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
 }
-
-#inputfooter{
-    border: none;
-    border-radius: 20px;
-    height: 2rem;
-    width: 14rem;
-    font-size: 12px;
-    font-family: raleway, sans-serif;
-    text-align: center;
-    margin: 1rem;
-}*/
-
-#inputfooter {
-    outline: 2px solid #207100;
-  }*/
 
 .BoxLien{
     display: flex;
@@ -109,16 +84,10 @@
     color: white;
     text-decoration: none;
 }
-.BoxFooter a{
+
+.LienFooter :visited{
     color: white;
     text-decoration: none;
-}
-.BoxFooter a:visited{
-    color: white;
-}
-.BoxFooter a:hover{
-    color: white;
-    text-decoration: underline;
 }
 
 

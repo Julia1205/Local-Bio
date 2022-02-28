@@ -38,57 +38,89 @@ class Users_model extends Model{
 *	@brief 		fonction hashant le mot de passe
 * 	@details 
 *	<p>Cette fonction permet de hasher le mot de passe</p>
-*	@param 	$userPassword varchar
-*	@return	hashedPwd varchar
+*	@param 	$userPassword string
+*	@return	hashedPwd string
 *
 **/
 	public function hashing($userPassword){
+		//hashage du mot de passe à l'aide de la fonction password_hash de PHP
 		$hashedPwd = password_hash($userPassword, PASSWORD_DEFAULT);
+		//retour du mot de passe hashé
 		return $hashedPwd;
 	}
+	
 /**
 *	@brief 		fonction vérifiant l'email de connexion
 * 	@details 
 *	<p>Cette fonction permet de vérifier si l'email </p>
-*	@param 	$userPassword varchar
-*	@return	hashedPwd varchar
+*	@param 	$userPassword string
+*	@return	$hashedPwd string
 *
 **/
-
 	public function checkMail($strmailField){
-		$mail = $strmailField;
-		$usermail = $this->select('user_email')->where("user_email", $mail)->find();
+		//requête de récupération dans la bdd correspondant à l'email entré dans le formulaire
+		$usermail = $this->select('user_email')->where("user_email", $strmailField)->find();
+		//si la requête ne trouve pas de mail correspondant
 		if(empty ($usermail)){
+			//renvoi de la condition négative
 			$userConnect = false;
 			return $userConnect;
-			
-		}else{
-			
+		}else{ //si la requête renvoi un résultat
+			//renvoi de la condition positive
 			$userConnect = true;
 			return $userConnect;
 		}
 	}
+	
+/**
+*	@brief 		fonction récupérant certaines données de l'utilisateur
+* 	@details 
+*	<p>Cette fonction permet de récupérer l'adresse mail, 
+*	le mot de passe hashé et l'id de l'utilisateur voulant se connecter </p>
+*	@param 	$strMailField string
+*	@return	$user tableau d'objet
+*
+**/
 	public function getUserPassword($strMailField){
-		$mail = $strMailField; 
-		$user = $this->select('user_email, user_password, user_id')->where("user_email", $mail)->find();
+		//récupération de l'email, du mot de passe hashé et de l'id de l'utilisateur correspondant à l'adresse mail vérifiée précédemment
+		$user = $this->select('user_email, user_password, user_id')->where("user_email", $strMailField)->find();
+		//renvoi de l'objet user contenant les données de la bdd
 		return $user;
 	}
 	
+/**
+*	@brief 		fonction vérifiant le mot de passe
+* 	@details 
+*	<p>Cette fonction permet de comparer le mot de passe hashé dans la base de données, 
+*	et le mot de passe entré dans le formulaire de connexion</p>
+*	@param 	$clearPassword string, $hashedPassword string
+*	@return	bouléen
+*
+**/
 	public function checkPassword($clearPassword, $hashedPassword){
-		$passwordField = $clearPassword;
-		$bddPassword = $hashedPassword;
-		$oups = "oups";
-		if(password_verify($passwordField, $bddPassword)){
+		//vérification de la correspondance du mot de passe entré et celui hashé de la bdd avec la fonction PHP password_verify
+		if(password_verify($clearPassword, $hashedPassword)){
+			//renvoi de condition vraie si correspondance
 			return true;
-		}else{
+		}else{ //cas où il n'y a pas de correspondance 
+			//renvoi de condition fausse
 			return false;
 		}
-		return $oups;
 	}
 	
+/**
+*	@brief 		fonction récupérant les données de l'utilisateur vérifié
+* 	@details 
+*	<p>Cette fonction permet de récupérer l'id, le prénom et l'adresse mail en base de données 
+*	de l'utilisateur venant de s'être connecté</p>
+*	@param 	$strMail string
+*	@return	$userIdentity tableau d'objet
+*
+**/
 	public function getFullUser($strMail){
-		$mail = $strMail;
-		$userIdentity = $this->select('user_id, user_firstname, user_email')->where("user_email", $mail)->find();
+		//requête de récupération de l'id, du prénom et de l'adresse mail correspondant à l'email vérifié précedemment
+		$userIdentity = $this->select('user_id, user_firstname, user_email')->where("user_email", $strMail)->find();
+		//renvoi du tableau contenant l'objet de la requête
 		return $userIdentity;
 	}
 	

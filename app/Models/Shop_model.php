@@ -31,33 +31,37 @@ class Shop_model extends Model{
  
     // Utilisation ou non des dates (création / modification)
     protected $useTimestamps = false;
+	
 /**
 *	@brief 		fonction retournant la liste des produits de la base de données
 * 	@details 
 *	<p>Cette fonction permet de rechercher via une requête, 
 *		la liste des produits présents dans la base de données</p>
 *	@param 	$intNumCat integer
-*	@return	Tableau contenant les produits (sous-tableaux)
+*	@return	$arrList tableau contenant les produits (sous-tableaux)
 *
 **/
 	public function findByCat($intNumCat){
+		//requête à la base de données des produits ayant la catégorie souhaitée
 		$arrList = $this->where("category_id", $intNumCat)->findAll();
+		//retour du tableau d'objets contenant les produits
 		return $arrList;
-
 	}
+	
 /**
 *	@brief 		fonction retournant le détails des articles
 * 	@details 
 *	<p>Cette fonction permet de rechercher via une requête, 
 *		le détail d'un article dans la base de données</p>
-*	@param 	$charProduct varchar
+*	@param 	$charProduct string
 *	@return	arrDetails tableau contenant les details (sous-tableaux)
 *
 **/
 	public function findDetails($charProduct){
+		//requête à la base de données du produit recherché
 		$arrDetails = $this->where("url_name", $charProduct)->find();
+		//retour de tableau contenant les détails du produit
 		return $arrDetails;
-		
 	}
 }
 

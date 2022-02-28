@@ -3,6 +3,7 @@
 
 {block name="css" append}
 	<link rel="stylesheet" href="{base_url('assets/css/shop.css')}"/>
+	<link rel="stylesheet" href="{base_url('assets/css/banniere.css')}"/>
 {/block}
 
 {block name="content"}

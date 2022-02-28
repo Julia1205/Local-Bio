@@ -339,4 +339,48 @@ class Users extends BaseController{
 		return redirect()->to('Users/connect');
 	}
 
+	public function profil(){
+	$this->_data['title'] = "Modifier son profil";
+	helper('form');
+	$arrErrors = "empty";
+			$this->_data['arrErrors'] = $arrErrors;
+			//Création du formulaire
+			$this->_data['form_open'] = form_open("users/create");
+			
+			$this->_data['label_name']     = form_label("Nom : ", "user_name class='persoInfo'");
+			
+			$this->_data['form_name'] = form_input ("user_name", $this->request->getPost('user_name')??'', "id='user_name' class='general'");
+			
+			$this->_data['label_firstname']     = form_label("Prénom : ", "user_firstname class='persoInfo'");
+			$this->_data['form_firstname'] = form_input ("user_firstname", $this->request->getPost('user_firstname')??'', "id='user_firstname' class='general'");
+			
+			$this->_data['label_email']     = form_label("Adresse mail : ", "user_email class='persoInfo'");
+			$this->_data['form_email'] = form_input ("user_email", $this->request->getPost('user_email')??'', "id='user_email'");
+			
+			$this->_data['label_password']     = form_label("Mot de passe : ", "user_password class='persoInfo'");
+			$this->_data['form_password'] = form_input ("user_password", $this->request->getPost('user_password')??'', "id='user_password' class='general'", "password");
+			
+			$this->_data['label_passwordConfirmed']     = form_label("Confirmez votre mot de passe : ", "user_passwordConfirmed class='persoInfo'");
+			$this->_data['form_passwordConfirmed'] = form_input ("user_passwordConfirmed", $this->request->getPost('user_passwordConfirmed')??'', "id='user_passwordConfirmed' class='general'", "password");
+			
+			$this->_data['label_houseNumber']     = form_label("Numéro de rue : ", "user_houseNumber class='persoInfo'");
+			$this->_data['form_houseNumber'] = form_input ("user_houseNumber", $this->request->getPost('user_houseNumber')??'', "id='user_houseNumber' class='general'");
+
+			$this->_data['label_address']     = form_label("Rue : ", "user_address class='persoInfo'");
+			$this->_data['form_address'] = form_input ("user_address", $this->request->getPost('user_address')??'', "id='user_address' class='general'");
+			
+			$this->_data['label_city']     = form_label("Ville : ", "user_city class='persoInfo'");
+			$this->_data['form_city'] = form_input ("user_city", $this->request->getPost('user_city')??'', "id='user_city' class='general'");
+			
+			$this->_data['label_cp']     = form_label("Code postal : ", "user_cp class='persoInfo'");
+			$this->_data['form_cp'] = form_input ("user_cp", $this->request->getPost('user_cp')??'', "id='user_cp' class='general'");
+			
+			$this->_data['label_phone']     = form_label("Numéro de téléphone : ", "user_phone class='persoInfo'");
+			$this->_data['form_phone'] = form_input ("user_phone", $this->request->getPost('user_phone')??'', "id='user_phone' class='general'");
+
+			
+			$this->_data['form_submit' ]= form_submit("submit", "Validez !");
+			$this->_data['form_close'] = form_close();
+			$this->display('create.tpl');
+	}
 }
