@@ -29,20 +29,18 @@
 	{if (isset($smarty.session.user_id))}
 			<div class="BandeauConnexion">
 			<div class="container">
-				<span>Bienvenue dans votre magasin</span>
+				<span>Bienvenu(e) {$smarty.session.user_firstname}</span>
 				<div class="IconLogin">
-					<a href="{base_url('index.php/users/connect')}"><i class="fas fa-user"></i></a>
+					<a href="{base_url('index.php/users/profil')}"><i class="fas fa-user"></i></a>
 					<a href="{base_url('index.php/users/disconnect')}"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
 					<a href="{base_url('index.php/shop/')}"><i class="fas fa-shopping-cart"></i></a>
 				</div>
 			</div>
 		</div>
-
-
 	{else}
 		<div class="BandeauConnexion">
 			<div class="container">
-				<span>Bienvenue dans votre magasin</span>
+				<span>Bienvenu dans votre magasin</span>
 				<div class="IconLogin">
 
 					<a href="{base_url('index.php/users/connect')}"><i class="fas fa-user"></i></a>
@@ -51,14 +49,12 @@
 				</div>
 			</div>
 		</div>
-
 	{/if}
-
     <!--FIN BANDEAU CONNEXION-->
     <!--NAVBAR-->
-    <div class="NavBarBox">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="NavBarBox" style="background-color: white;">
+        <div class="container" style="background-color: white;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white;">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">

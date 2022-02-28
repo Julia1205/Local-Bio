@@ -46,7 +46,6 @@ class Shop extends BaseController{
 		}else{
 			//Si le paramètre n'existe pas, utiliser la fonction findAll
 			$this->_data['products'] = $objShopModel->findAll();
-			var_dump($this->session->get());
 		}
 		//Appel de l'affichage
 		$this->display('shop.tpl');

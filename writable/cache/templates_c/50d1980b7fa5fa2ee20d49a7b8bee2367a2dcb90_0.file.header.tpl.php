@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-02-25 10:06:13
+/* Smarty version 4.1.0, created on 2022-02-25 12:02:57
   from 'C:\wamp64\www\Local-Bio\app\Views\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6218fe75432181_44944977',
+  'unifunc' => 'content_621919d1f2ba16_44322857',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50d1980b7fa5fa2ee20d49a7b8bee2367a2dcb90' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\header.tpl',
-      1 => 1645805158,
+      1 => 1645812173,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6218fe75432181_44944977 (Smarty_Internal_Template $_smarty_tpl) {
+function content_621919d1f2ba16_44322857 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,7 +33,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20484712676218fe754187c3_00778971', "css");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2052047053621919d1f11405_11145650', "css");
 ?>
 
 
@@ -58,9 +58,10 @@ echo base_url('assets/css/shop.css');?>
 	<?php if (((isset($_SESSION['user_id'])))) {?>
 			<div class="BandeauConnexion">
 			<div class="container">
-				<span>Bienvenue dans votre magasin</span>
+				<span>Bienvenu(e) <?php echo $_SESSION['user_firstname'];?>
+</span>
 				<div class="IconLogin">
-					<a href="<?php echo base_url('index.php/users/connect');?>
+					<a href="<?php echo base_url('index.php/users/profil');?>
 "><i class="fas fa-user"></i></a>
 					<a href="<?php echo base_url('index.php/users/disconnect');?>
 "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
@@ -74,7 +75,7 @@ echo base_url('assets/css/shop.css');?>
 	<?php } else { ?>
 		<div class="BandeauConnexion">
 			<div class="container">
-				<span>Bienvenue dans votre magasin</span>
+				<span>Bienvenu dans votre magasin</span>
 				<div class="IconLogin">
 
 					<a href="<?php echo base_url('index.php/users/connect');?>
@@ -90,9 +91,9 @@ echo base_url('assets/css/shop.css');?>
 
     <!--FIN BANDEAU CONNEXION-->
     <!--NAVBAR-->
-    <div class="NavBarBox">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="NavBarBox" style="background-color: white;">
+        <div class="container" style="background-color: white;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white;">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -127,12 +128,12 @@ echo base_url('assets/css/shop.css');?>
     <!--FIN NAVBAR-->
 <?php }
 /* {block "css"} */
-class Block_20484712676218fe754187c3_00778971 extends Smarty_Internal_Block
+class Block_2052047053621919d1f11405_11145650 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'css' => 
   array (
-    0 => 'Block_20484712676218fe754187c3_00778971',
+    0 => 'Block_2052047053621919d1f11405_11145650',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
