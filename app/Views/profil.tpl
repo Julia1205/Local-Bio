@@ -6,6 +6,7 @@
 
 
 	{block name="content"}
+	<br><br>
 	    <section class="profilBox">
 			<div>
 				<div class="boxInfo">
@@ -18,28 +19,22 @@
 										{/foreach}
 								</div>
 						{/if}
+						<div class="text-center">
 								{$form_open}
-									{$label_name}
-										{$form_name}
-									{$label_firstname}
-										{$form_firstname}
-									{$label_email}
-										{$form_email}
-									{$label_password}
-										{$form_password}
-									{$label_passwordConfirmed}
-										{$form_passwordConfirmed}
-									{$label_houseNumber}
-										{$form_houseNumber}
-									{$label_address}
-										{$form_address}
-									{$label_city}
-										{$form_city}
-									{$label_cp}
-										{$form_cp}
-									{$label_phone}
-										{$form_phone}
-									{$form_submit}
+									{$label_name} <br>
+										{$form_name} <br>
+									{$label_firstname} <br>
+										{$form_firstname} <br>
+									{$label_email} <br>
+										{$form_email} <br>
+									{$label_houseNumber} <br>
+										{$form_houseNumber}<br>
+									{$label_address}<br>
+										{$form_address}<br>
+									{$label_phone}<br>
+										{$form_phone}<br><br>
+									{$form_submit}<br>
 								{$form_close}
+							</div>
 
 	{/block}

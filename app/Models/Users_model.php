@@ -117,11 +117,17 @@ class Users_model extends Model{
 *	@return	$userIdentity tableau d'objet
 *
 **/
-	public function getFullUser($strMail){
+	public function getUser($strMail){
 		//requête de récupération de l'id, du prénom et de l'adresse mail correspondant à l'email vérifié précedemment
 		$userIdentity = $this->select('user_id, user_firstname, user_email')->where("user_email", $strMail)->find();
 		//renvoi du tableau contenant l'objet de la requête
 		return $userIdentity;
+	}
+	
+	public function getFullUser($intUserId){
+		//requête récupérant les données complètes de l'utilisateur selon son id
+		$userFullIdentity = $this->select('user_id, user_firstname, user_email, user_name, user_password, user_phone, user_address, city_id')->where("user_id", $intUserId)->find();
+		return $userFullIdentity;
 	}
 	
 }
