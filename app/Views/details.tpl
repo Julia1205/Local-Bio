@@ -46,7 +46,7 @@
                         </div>
                         <div class="ButtonAddPanier">
                             <i class="fas fa-shopping-cart"></i>
-                            <p class="AddPanier" href="panier.html">Ajouter au panier</p>
+                            <a class="AddPanier" href="panier.html">Ajouter au panier</p>
                         </div>
                     </div>
 				{/foreach}

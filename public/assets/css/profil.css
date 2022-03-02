@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cardo:ital@1&family=Open+Sans:wght@300&display=swap');
+
+body {
+    background-color: #F3F3F3;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* PROFIL */
+
+.profilBox{
+    height: 900px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    padding-right: 2rem;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+}
+
+.headerProfil{
+    text-align: center;
+}
+.boxInfo{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageProfil{
+    width: 132px;
+    height: 132px;
+    border-radius: 208.5px;
+}
+
+.title{
+    font-weight: normal;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.changeInfo{
+    border: none;
+    background-color: #76A713;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 70px;
+    margin-top: 1rem;
+}
+
+.general{
+    font-weight: 500;
+}

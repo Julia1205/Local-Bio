@@ -1,7 +1,7 @@
 {extends file="layout.tpl"}
 
 	{block name="css" append}
-		<link rel="stylesheet" href="{base_url('assets/css/Inscription.css')}"/>
+		<link rel="stylesheet" href="{base_url('assets/css/profil.css')}"/>
 	{/block}
 
 
@@ -33,8 +33,10 @@
 										{$form_address}<br>
 									{$label_phone}<br>
 										{$form_phone}<br><br>
-									{$form_submit}<br>
+									{$form_submit}<br><br>
 								{$form_close}
+								<a class="abonner" href="{base_url('index.php/Users/password')}" style="height 50px">Changer mdp</a>
 							</div>
+				
 
 	{/block}

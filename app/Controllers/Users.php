@@ -277,41 +277,129 @@ class Users extends BaseController{
 			//Attribution des erreurs à la vue
 			$this->_data['arrErrors'] = $arrErrors;
 			//Création du formulaire
+			
 			$this->_data['form_open'] = form_open("users/create");
-			
-			$this->_data['label_name']     = form_label("Nom : ", "user_name");
-			
-			$this->_data['form_name'] = form_input ("user_name", $this->request->getPost('user_name')??'', "id='user_name'");
-			
-			$this->_data['label_firstname']     = form_label("Prénom : ", "user_firstname");
-			$this->_data['form_firstname'] = form_input ("user_firstname", $this->request->getPost('user_firstname')??'', "id='user_firstname'");
-			
-			$this->_data['label_email']     = form_label("Adresse mail : ", "user_email");
-			$this->_data['form_email'] = form_input ("user_email", $this->request->getPost('user_email')??'', "id='user_email'");
-			
-			$this->_data['label_password']     = form_label("Mot de passe : ", "user_password");
-			$this->_data['form_password'] = form_input ("user_password", $this->request->getPost('user_password')??'', "id='user_password'", "password");
-			
-			$this->_data['label_passwordConfirmed']     = form_label("Confirmez votre mot de passe : ", "user_passwordConfirmed");
-			$this->_data['form_passwordConfirmed'] = form_input ("user_passwordConfirmed", $this->request->getPost('user_passwordConfirmed')??'', "id='user_passwordConfirmed'", "password");
-			
-			$this->_data['label_houseNumber']     = form_label("Numéro de rue : ", "user_houseNumber");
-			$this->_data['form_houseNumber'] = form_input ("user_houseNumber", $this->request->getPost('user_houseNumber')??'', "id='user_houseNumber'");
+			$arrAttributesLabel = [
+						'class' => 'general',
+			];
 
-			$this->_data['label_address']     = form_label("Rue : ", "user_address");
-			$this->_data['form_address'] = form_input ("user_address", $this->request->getPost('user_address')??'', "id='user_address'");
+			$this->_data['label_name']     = form_label("Nom : ", "user_name", $arrAttributesLabel);
 			
-			$this->_data['label_city']     = form_label("Ville : ", "user_city");
-			$this->_data['form_city'] = form_input ("user_city", $this->request->getPost('user_city')??'', "id='user_city'");
+			$arrAttributesInput = [
+						'name' => 'user_name',
+						'id' => 'user_name',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_name')??'',
+			];
+
+			$this->_data['form_name'] = form_input ($arrAttributesInput);
 			
-			$this->_data['label_cp']     = form_label("Code postal : ", "user_cp");
-			$this->_data['form_cp'] = form_input ("user_cp", $this->request->getPost('user_cp')??'', "id='user_cp'");
+			$this->_data['label_firstname']     = form_label("Prénom : ", "user_firstname", $arrAttributesLabel);
 			
-			$this->_data['label_phone']     = form_label("Numéro de téléphone : ", "user_phone");
-			$this->_data['form_phone'] = form_input ("user_phone", $this->request->getPost('user_phone')??'', "id='user_phone'");
+			$arrAttributesInput = [
+						'name' => 'user_firstname',
+						'id' => 'user_firstname',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_firstname')??'',
+			];
+
+			$this->_data['form_firstname'] = form_input ($arrAttributesInput);
+			
+			$this->_data['label_email']     = form_label("Adresse mail : ", "user_email", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_email',
+						'id' => 'user_email',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_email')??'',
+						'type' => 'mail',
+			];
+
+			$this->_data['form_email'] = form_input ($arrAttributesInput);
+			
+			
+			$this->_data['label_password']     = form_label("Mot de passe : ", "user_password", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_password',
+						'id' => 'user_password',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_password')??'',
+						'type' => 'password',
+			];
+
+			$this->_data['form_password'] = form_input ($arrAttributesInput);
+			
+			$this->_data['label_passwordConfirmed']     = form_label("Confirmez votre mot de passe : ", "user_passwordConfirmed", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_passwordConfirmed',
+						'id' => 'user_passwordConfirmed',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_passwordConfirmed')??'',
+						'type' => 'password',
+			];
+
+			$this->_data['form_passwordConfirmed'] = form_input ($arrAttributesInput);
+			
+			$this->_data['label_houseNumber']     = form_label("Numéro de rue : ", "user_houseNumber", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_houseNumber',
+						'id' => 'user_houseNumber',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_houseNumber')??'',
+						'type' => 'number',
+			];
+
+			$this->_data['form_houseNumber'] = form_input ($arrAttributesInput);
+
+			$this->_data['label_address']     = form_label("Rue : ", "user_address", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_address',
+						'id' => 'user_address',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_address')??'',
+			];
+
+			$this->_data['form_address'] = form_input ($arrAttributesInput);
+			
+			$this->_data['label_city']     = form_label("Ville : ", "user_city", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_city',
+						'id' => 'user_city',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_city')??'',
+			];
+
+			$this->_data['form_city'] = form_input ($arrAttributesInput);
+			
+			$this->_data['label_cp']     = form_label("Code postal : ", "user_cp", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_cp',
+						'id' => 'user_cp',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_cp')??'',
+			];
+
+			$this->_data['form_cp'] = form_input ($arrAttributesInput);
+			
+			$this->_data['label_phone']     = form_label("Numéro de téléphone : ", "user_phone", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_phone',
+						'id' => 'user_phone',
+						'class' => 'persoInfo',
+						'value' => $this->request->getPost('user_phone')??'',
+			];
+
+			$this->_data['form_phone'] = form_input ($arrAttributesInput);
 
 			
-			$this->_data['form_submit' ]= form_submit("submit", "Validez !");
+			$this->_data['form_submit' ]= form_submit("submit", "Validez !", "class='changeInfo'");
 			$this->_data['form_close'] = form_close();
 			//Instruction d'affichage
 			$this->display('create.tpl');
@@ -350,7 +438,7 @@ class Users extends BaseController{
 			helper('form');
 			helper('array');
 			//assignation du titre
-			$this->_data['title'] = "S'inscrire";
+			$this->_data['title'] = "Mon profil";
 			
 			// Chargement de la librairie
 			$validation =  \Config\Services::validation();
@@ -460,36 +548,150 @@ class Users extends BaseController{
 			$this->_data['arrErrors'] = $arrErrors;
 			//Création du formulaire
 			$this->_data['form_open'] = form_open("users/profil");
-			//$intuserPhone = $objUserIdentity->user_phone;
-			//$charUserAddress = $objUserIdentity->user_address;
-			//$intUserCP = $objUserIdentity->city_id;
-			$this->_data['label_name']     = form_label("Nom : ", "user_name");
 			
-			$this->_data['form_name'] = form_input ("user_name", $charUsername, "id='user_name'");
+			$arrAttributesLabel = [
+						'class' => 'general',
+			];
 			
-			$this->_data['label_firstname']     = form_label("Prénom : ", "user_firstname");
+			$this->_data['label_name']     = form_label('Nom :', 'user_name', $arrAttributesLabel);
 			
-			$this->_data['form_firstname'] = form_input ("user_firstname", $charuserFirstname, "id='user_firstname'");
-			
-			$this->_data['label_email']     = form_label("Adresse mail : ", "user_email");
-			$this->_data['form_email'] = form_input ("user_email", $charUserMail, "id='user_email'");
-			
-			$this->_data['label_houseNumber']     = form_label("Numéro de rue : ", "user_houseNumber");
-			$this->_data['form_houseNumber'] = form_input ("user_houseNumber", $houseNumber, "id='user_houseNumber'");
+			$arrAttributesInput = [
+						'name' => 'user_name',
+						'id' => 'user_name',
+						'class' => 'persoInfo',
+						'value' => $charUsername,
+			];
 
-			$this->_data['label_address']     = form_label("Rue : ", "user_address");
-			$this->_data['form_address'] = form_input ("user_address", $address, "id='user_address'");
+			$this->_data['form_name'] = form_input ($arrAttributesInput);
 			
-			$this->_data['label_phone']     = form_label("Numéro de téléphone : ", "user_phone");
-			$this->_data['form_phone'] = form_input ("user_phone", $intuserPhone, "id='user_phone'");
+			$this->_data['label_firstname']     = form_label("Prénom : ", "user_firstname", $arrAttributesLabel);
+			
+			$arrAttributesInput = [
+						'name' => 'user_firstname',
+						'id' => 'user_firstname',
+						'class' => 'persoInfo',
+						'value' => $charuserFirstname,
+			];
+
+			$this->_data['form_firstname'] = form_input ($arrAttributesInput);
+			
+			$arrAttributesInput = [
+						'name' => 'user_email',
+						'id' => 'user_email',
+						'class' => 'persoInfo',
+						'value' => $charUserMail,
+			];
+
+			$this->_data['label_email']     = form_label("Adresse mail : ", "user_email", $arrAttributesLabel);
+			$this->_data['form_email'] = form_input ($arrAttributesInput);
+			
+			$arrAttributesInput = [
+						'name' => 'user_houseNumber',
+						'id' => 'user_houseNumber',
+						'class' => 'persoInfo',
+						'value' => $houseNumber,
+			];
 
 			
-			$this->_data['form_submit' ]= form_submit("submit", "Validez !");
+			$this->_data['label_houseNumber']     = form_label("Numéro de rue : ", "user_houseNumber",$arrAttributesLabel);
+			$this->_data['form_houseNumber'] = form_input ($arrAttributesInput);
+			
+			$arrAttributesInput = [
+						'name' => 'user_address',
+						'id' => 'user_address',
+						'class' => 'persoInfo',
+						'value' => $address,
+			];
+
+			$this->_data['label_address']     = form_label("Rue : ", "user_address", $arrAttributesLabel);
+			$this->_data['form_address'] = form_input ($arrAttributesInput);
+			
+			$arrAttributesInput = [
+						'name' => 'user_phone',
+						'id' => 'user_phone',
+						'class' => 'persoInfo',
+						'value' => $intuserPhone,
+			];
+
+			$this->_data['label_phone']     = form_label("Numéro de téléphone : ", "user_phone",$arrAttributesLabel);
+			$this->_data['form_phone'] = form_input ($arrAttributesInput);
+
+			$this->_data['form_submit' ]= form_submit("submit", "Validez !", "class='changeInfo'");
 			$this->_data['form_close'] = form_close();
 			//Instruction d'affichage
 			$this->display('profil.tpl');
 			}else{
 				//si l'utilisateur n'est pas connecté
+				$this->_data['title'] = "Interdit";
+				$arrErrors[] = "";
+				$this->_data['arrErrors'] = $arrErrors;
+				$this->display('erreur403.tpl');
+			}
+		}
+		
+		public function password(){
+			if($this->session->get('user_id') != NULL){
+				//instanciation des helpers utilisés
+				helper('form');
+				helper('array');
+				//assignation du titre
+				$this->_data['title'] = "Modifier mot de passe";
+				
+				// Chargement de la librairie
+				$validation =  \Config\Services::validation();
+				//Définition des règles de validation du formulaire
+				$validation->setRules([					
+					'user_password' => [
+						'label'  => 'mot de passe',
+						'rules'  => 'required|alpha_numeric',
+						'errors' => [
+							'required' => 'Le {field} est obligatoire',
+							'alpha_numeric' => 'Le {field} doit être au format valide',
+						],
+					],
+					'user_passwordConfirmed' => [
+						'label'  => 'mot de passe',
+						'rules'  => 'required|alpha_numeric|matches[user_password]',
+						'errors' => [
+							'required' => 'Le {field} est obligatoire',
+							'alpha_numeric' => 'Le {field} ne doit contenir que des lettres et des chiffres',
+							//vérifie que la valeur de ce champ correspond à celle du champ nommé user_password
+							'matches' => 'le {field} doit correspondre au mot de passe'
+						],
+					],
+				]);
+
+
+				$arrAttributesLabel = [
+						'class' => 'general',
+				];
+				
+				$this->_data['label_password']     = form_label("Mot de passe : ", "user_password", $arrAttributesLabel);
+			
+				$arrAttributesInput = [
+							'name' => 'user_password',
+							'id' => 'user_password',
+							'class' => 'persoInfo',
+							'value' => $this->request->getPost('user_password')??'',
+							'type' => 'password',
+				];
+
+				$this->_data['form_password'] = form_input ($arrAttributesInput);
+				
+				$this->_data['label_passwordConfirmed']     = form_label("Confirmez votre mot de passe : ", "user_passwordConfirmed", $arrAttributesLabel);
+				
+				$arrAttributesInput = [
+							'name' => 'user_passwordConfirmed',
+							'id' => 'user_passwordConfirmed',
+							'class' => 'persoInfo',
+							'value' => $this->request->getPost('user_passwordConfirmed')??'',
+							'type' => 'password',
+				];
+
+				$this->_data['form_passwordConfirmed'] = form_input ($arrAttributesInput);
+
+				$this->display('password.tpl');
+			}else{
 				$this->_data['title'] = "Interdit";
 				$arrErrors[] = "";
 				$this->_data['arrErrors'] = $arrErrors;

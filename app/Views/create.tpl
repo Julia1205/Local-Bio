@@ -1,7 +1,7 @@
 {extends file="layout.tpl"}
 
 	{block name="css" append}
-		<link rel="stylesheet" href="{base_url('assets/css/Inscription.css')}"/>
+		<link rel="stylesheet" href="{base_url('assets/css/profil.css')}"/>
 	{/block}
 
 
