@@ -24,7 +24,7 @@ class Shop_model extends Model{
     // Nom du champ de la clé primaire
     protected $primaryKey    = 'product_id';
     // Champs utilisables
-    protected $allowedFields = ['product_name', 'product_desc', 'product_pu', 'product_img', 'product_conditionning', 'url_name'];
+    protected $allowedFields = ['product_name', 'product_desc', 'product_pu', 'product_img', 'product_conditionning', 'url_name', 'product_tva'];
  
     // Type de retour => Chemin de l'entité à utiliser
     protected $returnType    = 'App\Entities\Shop_entity';

@@ -4,13 +4,14 @@
 * @authors Julie Sigrist, Julien Wodey, David Ombreux
 * @version 1.0
 * @date 16/02/2022
-* @brief Controller des produits
+* @brief Controller de la boutique
 *
 *  @details 
 * <p>Cette classe permet de gérer les actions des pages gérées par le controller des produits</p>
 * <p>Les actions sont :</p>
 * <ul>
 * 	<li><strong>boutique</strong> : page de la boutique</li>
+*	<li><strong>details</strong> : page de détails des articles</li>
 * </ul>
 *
 **/

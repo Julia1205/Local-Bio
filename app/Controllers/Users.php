@@ -95,6 +95,8 @@ class Users extends BaseController{
 							$this->session->set('user_email', $objUser->user_email);
 							$this->session->set('user_firstname', $objUser->user_firstname);
 							$this->session->set('user_id', $objUser->user_id);
+							$this->session->set('rank_id', $objUser->rank_id);
+							
 						//si le mot de passe est faux
 						}else{
 							//attribution d'une erreur
@@ -630,7 +632,10 @@ class Users extends BaseController{
 			$this->_data['form_submit' ]= form_submit("submit", "Validez !", "class='changeInfo'");
 			$this->_data['form_close'] = form_close();
 			//Instruction d'affichage
-			$this->display('profil.tpl');
+			if($this->session->get('rank_id') == 1){
+				$this->display('profilAdmin.tpl');
+			}elseif($this->session->get('rank_id') == 2 OR 3 OR 4){
+				$this->display('profil.tpl');
 			}else{
 				//si l'utilisateur n'est pas connecté
 				$this->_data['title'] = "Interdit";
@@ -638,6 +643,7 @@ class Users extends BaseController{
 				$this->_data['arrErrors'] = $arrErrors;
 				$this->display('erreur403.tpl');
 			}
+		}
 	}
 	
 /**
