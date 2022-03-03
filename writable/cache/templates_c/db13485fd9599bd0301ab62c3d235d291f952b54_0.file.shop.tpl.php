@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-03 04:15:39
+/* Smarty version 4.1.0, created on 2022-03-03 11:49:00
   from 'C:\wamp64\www\Local-Bio\app\Views\shop.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6220954b5b9a26_46711885',
+  'unifunc' => 'content_6220ff8c685355_42895014',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'db13485fd9599bd0301ab62c3d235d291f952b54' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\shop.tpl',
-      1 => 1646302455,
+      1 => 1646329736,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6220954b5b9a26_46711885 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6220ff8c685355_42895014 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,21 +28,21 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6386776996220954b5a4736_51530372', "css");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6815116436220ff8c672e00_38058676', "css");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10957220076220954b5a88e3_14205727', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3357464116220ff8c676720_64579613', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "layout.tpl");
 }
 /* {block "css"} */
-class Block_6386776996220954b5a4736_51530372 extends Smarty_Internal_Block
+class Block_6815116436220ff8c672e00_38058676 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'css' => 
   array (
-    0 => 'Block_6386776996220954b5a4736_51530372',
+    0 => 'Block_6815116436220ff8c672e00_38058676',
   ),
 );
 public $append = 'true';
@@ -58,12 +58,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "css"} */
 /* {block "content"} */
-class Block_10957220076220954b5a88e3_14205727 extends Smarty_Internal_Block
+class Block_3357464116220ff8c676720_64579613 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_10957220076220954b5a88e3_14205727',
+    0 => 'Block_3357464116220ff8c676720_64579613',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -131,7 +131,8 @@ $_smarty_tpl->tpl_vars['objProduct']->do_else = false;
 </span>
 											<span><?php echo $_smarty_tpl->tpl_vars['objProduct']->value->product_pu;?>
  €</span>
-											<button class="BouttonAchatArticle" onclick="window.location.href ='legume.html';" >
+											<p id="jscript"></p>
+											<button class="BouttonAchatArticle">
 												<span class="SpanAchat"><a href='<?php echo base_url('index.php/shop/details');?>
 /<?php echo $_smarty_tpl->tpl_vars['objProduct']->value->url_name;?>
 '>Voir l'article</a></span>
@@ -142,7 +143,6 @@ $_smarty_tpl->tpl_vars['objProduct']->do_else = false;
 						<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-						
 					</div>
 			</div>
 		</div>

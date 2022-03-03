@@ -294,7 +294,11 @@ input.checkbox{
     border-radius: 0;
     border: 3px solid black;
 }
-
+#jscript{
+margin-top : 2rem;
+text-align : center;
+color: red;
+}
 @media screen and (max-width: 768px) 
 { 
     .BoxOrangeImage{

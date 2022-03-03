@@ -37,15 +37,17 @@
 							<li class="PoidsChoix">2 kilogrammes</li>
 							<li class="PoidsChoix">5 kilogrammes</li>
 						</ul>
+						<p id="jscript"></p>
 						<div class="ChoixProduitBox">
 							<div class="ChoixNumber">
 								<i class="fas fa-minus"></i>
 								<span class="NumberChoice">1</span>
 								<i class="fas fa-plus"></i>
 							</div>
+							
 							<div class="ButtonAddPanier">
 								<i class="fas fa-shopping-cart"></i>
-								<a class="AddPanier" href="panier.html">Ajouter au panier</p>
+								<a class="AddPanier" id="button">Ajouter au panier</p>
 							</div>
 						</div>
 					{/foreach}
@@ -53,4 +55,18 @@
 				</div>
 			</div>
 		</div>
+	{/block}
+	{block name=js append}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+	{if (isset($smarty.session.user_id))}
+	{else}
+			$("#button").click(function(){
+				$("#jscript").html("Veuillez vous <a href='{base_url('index.php/Users/connect')}'>connecter</a>")
+				$("#jscript").css("border", "2px solid red")
+			});
+
+	{/if}
+	</script>
 	{/block}

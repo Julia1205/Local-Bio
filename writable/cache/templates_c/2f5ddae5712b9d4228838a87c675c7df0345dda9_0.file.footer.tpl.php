@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-02 08:26:38
+/* Smarty version 4.1.0, created on 2022-03-03 11:59:47
   from 'C:\wamp64\www\Local-Bio\app\Views\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_621f7e9e7e8a20_24830656',
+  'unifunc' => 'content_622102137bb016_52758726',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5ddae5712b9d4228838a87c675c7df0345dda9' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\footer.tpl',
-      1 => 1646231125,
+      1 => 1646330319,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_621f7e9e7e8a20_24830656 (Smarty_Internal_Template $_smarty_tpl) {
-?>    <!--FOOTER-->
+function content_622102137bb016_52758726 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
+    <!--FOOTER-->
     <section>
         <div class="BoxFooter">
             <div class="BoxImageFooter1"></div>
@@ -74,6 +77,22 @@ function content_621f7e9e7e8a20_24830656 (Smarty_Internal_Template $_smarty_tpl)
     </section>
 
 </body>
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1556096609622102137ba069_96978340', 'js');
+?>
+
+</html><?php }
+/* {block 'js'} */
+class Block_1556096609622102137ba069_96978340 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'js' => 
+  array (
+    0 => 'Block_1556096609622102137ba069_96978340',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
 
 <!-- JavaScript Bundle with Popper -->
 <?php echo '<script'; ?>
@@ -81,5 +100,9 @@ function content_621f7e9e7e8a20_24830656 (Smarty_Internal_Template $_smarty_tpl)
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"><?php echo '</script'; ?>
 >
-</html><?php }
+
+<?php
+}
+}
+/* {/block 'js'} */
 }

@@ -50,14 +50,14 @@
 											<img src="{base_url('assets/img')}/{$objProduct->product_img}" alt="{$objProduct->product_name}" class="ImgArticle">
 											<span class="TitleArticle">{$objProduct->product_name}</span>
 											<span>{$objProduct->product_pu} €</span>
-											<button class="BouttonAchatArticle" onclick="window.location.href ='legume.html';" >
+											<p id="jscript"></p>
+											<button class="BouttonAchatArticle">
 												<span class="SpanAchat"><a href='{base_url('index.php/shop/details')}/{$objProduct->url_name}'>Voir l'article</a></span>
 											</button>
 										</div>
 									</div>
 								</div>			
 						{/foreach}
-						
 					</div>
 			</div>
 		</div>
