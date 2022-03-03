@@ -21,7 +21,11 @@
                 <i class="fas fa-list"></i>
             </div>
             <div class="Trie">Trier par dernier <i class="fas fa-angle-down"></i></div>
-            <input type="text" placeholder="Recherche de produit" class="RechercherProduit">
+            {$form_open}
+			{$label_product}
+			{$form_product}
+			{$form_submit}
+			{$form_close}
         </div>
 		<div class="container">
 		                <div class="col-lg-offset-1 col-lg-1">

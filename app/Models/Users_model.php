@@ -10,9 +10,13 @@
 * <p>Requêtes à la table des utilisateurs</p>
 * <p>Les actions sont :</p>
 * <ul>
-* 	<li><strong></strong> : </li>
-* 	<li><strong></strong> : </li>
-* 	<li><strong></strong> : </li>
+* 	<li><strong>hashing</strong> : fonction hashant le mot de passe</li>
+* 	<li><strong>checkMail</strong> : fonction vérifiant la présence dans la base de données de l'adresse mail</li>
+* 	<li><strong>getUserPassword</strong> : fonction récupérant le mot de passe dans la base de données</li>
+* 	<li><strong>checkPassword</strong> : fonction vérifiant le mot de passe saisie</li>
+* 	<li><strong>getUser</strong> : fonction récupérant l'id, l'adresse mail et le prénom de l'utilisateur</li>
+* 	<li><strong>getFullUser</strong> : fonction récupérant l'ensemble des données d'un utilisateur</li>
+*
 * </ul>
 *
 **/
@@ -124,9 +128,18 @@ class Users_model extends Model{
 		return $userIdentity;
 	}
 	
+/**
+*	@brief 		fonction récupérant les données de l'utilisateur vérifié
+* 	@details 
+*	<p>Cette fonction permet de récupérer l'ensemble des données d'un utilisateur en base de données</p>
+*	@param 	$intUserId integer
+*	@return	$userFullIdentity tableau d'objet
+*
+**/
+
 	public function getFullUser($intUserId){
 		//requête récupérant les données complètes de l'utilisateur selon son id
-		$userFullIdentity = $this->select('user_id, user_firstname, user_email, user_name, user_password, user_phone, user_address, city_id')->where("user_id", $intUserId)->find();
+		$userFullIdentity = $this->select('user_id, user_firstname, user_email, user_name, user_password, user_phone, user_address, city_id, rank_id')->where("user_id", $intUserId)->find();
 		return $userFullIdentity;
 	}
 	

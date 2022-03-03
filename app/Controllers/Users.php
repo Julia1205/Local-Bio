@@ -2,7 +2,7 @@
 /**
 * @file Users.php
 * @authors Julie Sigrist, Julien Wodey, Ombreux David
-* @version 1.0
+* @version 1.1
 * @date 16/02/2022
 * @brief Controller des utilisateurs
 *
@@ -13,6 +13,10 @@
 * 	<li><strong>connect</strong> : page de connexion</li>
 * 	<li><strong>create_user</strong> : page d'inscription</li>
 * 	<li><strong>deconnect</strong> : fonction de déconnexion</li>
+*	<li><strong>profil</strong> : fonction de modification des données</li>
+*	<li><strong>password</strong> : fonction de modification du mot de passe</li>
+*	<li><strong>deleteAccount</strong> : fonction de suppression du compte</li>
+
 * </ul>
 *
 **/
@@ -279,19 +283,20 @@ class Users extends BaseController{
 			//Création du formulaire
 			
 			$this->_data['form_open'] = form_open("users/create");
+			//attribution d'une classe aux labels
 			$arrAttributesLabel = [
 						'class' => 'general',
 			];
-
+			//création du label
 			$this->_data['label_name']     = form_label("Nom : ", "user_name", $arrAttributesLabel);
-			
+			//attribution des détails de l'input
 			$arrAttributesInput = [
 						'name' => 'user_name',
 						'id' => 'user_name',
 						'class' => 'persoInfo',
 						'value' => $this->request->getPost('user_name')??'',
 			];
-
+			//création du champ de saisie
 			$this->_data['form_name'] = form_input ($arrAttributesInput);
 			
 			$this->_data['label_firstname']     = form_label("Prénom : ", "user_firstname", $arrAttributesLabel);
@@ -433,6 +438,7 @@ class Users extends BaseController{
 *
 **/
 	public function profil(){
+		//si l'utilisateur n'est pas connecté, interdiction d'accès à la page
 		if($this->session->get('user_id') != NULL){
 			//Ajout du helper de formulaire
 			helper('form');
@@ -503,7 +509,7 @@ class Users extends BaseController{
 			$userId = $this->session->get('user_id'); //attribution de l'id en session
 			$objUser = $objUsersModel->getFullUser($userId); // récupération de l'ensemble des données de l'utilisateur
 			$objUserIdentity = $objUser[0]; // récupération de l'objet
-			
+			//Découpage de l'objet retourné par la foncion getFullUser
 			$charUsername = $objUserIdentity->user_name;
 			$charuserFirstname = $objUserIdentity->user_firstname;
 			$charUserMail = $objUserIdentity->user_email;
@@ -511,6 +517,7 @@ class Users extends BaseController{
 			$charUserAddress = $objUserIdentity->user_address;
 			$intUserCP = $objUserIdentity->city_id;
 			$address = $objUserIdentity->user_address;
+				//Découpage des données du champ user_address afin de récupérer le numéro de maison séparément du nom de la rue
 			$temp = explode(", ", $address);
 			$houseNumber = $temp[0];
 			$address = $temp[1];
@@ -537,7 +544,11 @@ class Users extends BaseController{
 							];
 					//remplacement des données en bdd
 					$objUsersModel->replace($arrUser);
-					return redirect()->to('Users/profil');
+					$this->_data['title'] = "Validation";
+					$arrErrors[] = "";
+					$this->_data['arrErrors'] = $arrErrors;
+					$this->display('modification.tpl');
+
 			
 				//Si le formulaire n'est pas envoyé car contient des erreurs
 				 }else{
@@ -548,20 +559,20 @@ class Users extends BaseController{
 			$this->_data['arrErrors'] = $arrErrors;
 			//Création du formulaire
 			$this->_data['form_open'] = form_open("users/profil");
-			
+			//attribution d'une classe aux labels
 			$arrAttributesLabel = [
 						'class' => 'general',
 			];
-			
+			//création du label
 			$this->_data['label_name']     = form_label('Nom :', 'user_name', $arrAttributesLabel);
-			
+			//attributions des détails du champ
 			$arrAttributesInput = [
 						'name' => 'user_name',
 						'id' => 'user_name',
 						'class' => 'persoInfo',
 						'value' => $charUsername,
 			];
-
+			//création du champ de saisie
 			$this->_data['form_name'] = form_input ($arrAttributesInput);
 			
 			$this->_data['label_firstname']     = form_label("Prénom : ", "user_firstname", $arrAttributesLabel);
@@ -627,20 +638,44 @@ class Users extends BaseController{
 				$this->_data['arrErrors'] = $arrErrors;
 				$this->display('erreur403.tpl');
 			}
-		}
-		
+	}
+	
+/**
+*	@brief 		méthode permettant la modification du mot de passe de l'utilisateur connecté
+* 	@details 
+*	<p>Cette méthode permet au visiteur de modifier ses données</p>
+*
+**/
 		public function password(){
-			if($this->session->get('user_id') != NULL){
+			//si l'utilisateur n'est pas connecté, interdiction d'accès à la page
+			if($this->session->get('user_id') == NULL){
+				$this->_data['title'] = "Interdit";
+				$arrErrors[] = "";
+				$this->_data['arrErrors'] = $arrErrors;
+				$this->display('erreur403.tpl');
+			}else{
 				//instanciation des helpers utilisés
 				helper('form');
 				helper('array');
 				//assignation du titre
 				$this->_data['title'] = "Modifier mot de passe";
+				//initialisation du tableau d'erreurs
+				$arrErrors = array();
+				$objUsersModel = new Users_model(); // Instanciation du modèle
+				$objUsers     = new \App\Entities\Users_entity(); // Instanciation de l'entité
 				
 				// Chargement de la librairie
 				$validation =  \Config\Services::validation();
 				//Définition des règles de validation du formulaire
-				$validation->setRules([					
+				$validation->setRules([		
+					'user_oldPassword' => [
+						'label'  => 'Ancien mot de passe',
+						'rules'  => 'required|alpha_numeric',
+						'errors' => [
+							'required' => 'Le {field} est obligatoire',
+							'alpha_numeric' => 'Le {field} ne doit contenir que des lettres et des chiffres',
+						],
+					],				
 					'user_password' => [
 						'label'  => 'mot de passe',
 						'rules'  => 'required|alpha_numeric',
@@ -660,42 +695,129 @@ class Users extends BaseController{
 						],
 					],
 				]);
+				if (count($this->request->getPost()) > 0){ // Le formulaire a été envoyé ?
+					
+					if ($validation->run($this->request->getPost())){ //on teste la validation du formulaire sur les données
 
+						//récupération en base de données des informations de l'utilisateur
+						$tempPassword = $objUsersModel->getFullUser($this->session->get('user_id'));
+						//récupération de l'objet retourné par la fonction précédente
+						$password = $tempPassword[0];
+						//vérification de l'ancien mot de passe
+						$oldPassword = $objUsersModel->checkPassword($this->request->getPost('user_oldPassword'), $password->user_password);
+						//si l'ancien mot de passe correspond
+						if($oldPassword == true){
+							//hashage du nouveau mot de passe 
+							$strPasswordField = $objUsersModel->hashing($this->request->getPost(['user_password'][0]));
+							//recréation des données de l'utilisateur
+							$arrUser = [
+								'user_id' => $password->user_id,
+								'user_name' => $password->user_name,
+								'user_firstname' => $password->user_firstname,
+								'user_email' => $password->user_email,
+								'user_address' => $password->user_address,
+								'user_phone' => $password->user_phone,
+								'rank_id' => $password->rank_id, 
+								'user_password' => $strPasswordField,
+							];
+							//remplacement des données dans la base de données
+							$objUsersModel->replace($arrUser);
+							//affichage d'une page de confirmation de modification
+							$this->_data['title'] = "Validation";
+							$arrErrors[] = "";
+							$this->_data['arrErrors'] = $arrErrors;
+							$this->display('modification.tpl');
 
-				$arrAttributesLabel = [
-						'class' => 'general',
-				];
+						}
+					//Si le formulaire n'est pas envoyé car contient des erreurs
+					}else{
+						$arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
+					}
+				}
+
+					//Attribution des erreurs à la vue
+					$this->_data['arrErrors'] = $arrErrors;
+					//Création du formulaire
+
+					$this->_data['form_open'] = form_open("users/password");
+					//attribution d'une classe aux labels
+					$arrAttributesLabel = [
+							'class' => 'general',
+					];
+					//création d'un label
+					$this->_data['label_oldPassword']     = form_label("Ancien mot de passe : ", "user_oldPassword", $arrAttributesLabel);
+					//attribution des détails du champ de saisie
+					$arrAttributesInput = [
+								'name' => 'user_oldPassword',
+								'id' => 'user_oldPassword',
+								'class' => 'persoInfo',
+								'value' => $this->request->getPost('user_oldPassword')??'',
+								'type' => 'password',
+					];
+					//création du champ de saisie
+					$this->_data['form_oldPassword'] = form_input ($arrAttributesInput);
+					
+					$this->_data['label_password']     = form_label("Mot de passe : ", "user_password", $arrAttributesLabel);
 				
-				$this->_data['label_password']     = form_label("Mot de passe : ", "user_password", $arrAttributesLabel);
-			
-				$arrAttributesInput = [
-							'name' => 'user_password',
-							'id' => 'user_password',
-							'class' => 'persoInfo',
-							'value' => $this->request->getPost('user_password')??'',
-							'type' => 'password',
-				];
+					$arrAttributesInput = [
+								'name' => 'user_password',
+								'id' => 'user_password',
+								'class' => 'persoInfo',
+								'value' => $this->request->getPost('user_password')??'',
+								'type' => 'password',
+					];
 
-				$this->_data['form_password'] = form_input ($arrAttributesInput);
-				
-				$this->_data['label_passwordConfirmed']     = form_label("Confirmez votre mot de passe : ", "user_passwordConfirmed", $arrAttributesLabel);
-				
-				$arrAttributesInput = [
-							'name' => 'user_passwordConfirmed',
-							'id' => 'user_passwordConfirmed',
-							'class' => 'persoInfo',
-							'value' => $this->request->getPost('user_passwordConfirmed')??'',
-							'type' => 'password',
-				];
+					$this->_data['form_password'] = form_input ($arrAttributesInput);
+					
+					$this->_data['label_passwordConfirmed']     = form_label("Confirmez votre mot de passe : ", "user_passwordConfirmed", $arrAttributesLabel);
+					
+					$arrAttributesInput = [
+								'name' => 'user_passwordConfirmed',
+								'id' => 'user_passwordConfirmed',
+								'class' => 'persoInfo',
+								'value' => $this->request->getPost('user_passwordConfirmed')??'',
+								'type' => 'password',
+					];
 
-				$this->_data['form_passwordConfirmed'] = form_input ($arrAttributesInput);
-
-				$this->display('password.tpl');
-			}else{
+					$this->_data['form_passwordConfirmed'] = form_input ($arrAttributesInput);
+					
+					$this->_data['form_submit' ]= form_submit("submit", "Validez !");
+					$this->_data['form_close'] = form_close();
+			}
+					//instruction d'affichage de la page
+					$this->display('password.tpl');
+		}
+		
+/**
+*	@brief 		méthode permettant la suppression du compte de l'utilisateur connecté
+* 	@details 
+*	<p>Cette méthode permet au visiteur de supprimer son compte</p>
+*
+**/
+		public function deleteAccount(){
+			//si l'utilisateur n'est pas connecté, interdiction d'accès à la page
+			if($this->session->user_id == NULL){
 				$this->_data['title'] = "Interdit";
 				$arrErrors[] = "";
 				$this->_data['arrErrors'] = $arrErrors;
 				$this->display('erreur403.tpl');
+			}else{
+				//si l'utilisateur est connecté
+				$objUsersModel = new Users_model(); // Instanciation du modèle
+				$objUsers     = new \App\Entities\Users_entity(); // Instanciation de l'entité
+				//selection de l'utilisateur
+				$objUsersModel->where('user_id', $this->session->get('user_id'));
+				//suppression du compte de l'utilisateur
+				$objUsersModel->delete();
+				//affichage d'une page de confirmation forçant l'utilisateur à naviguer sur le site
+				$this->_data['title'] = "Suppression";
+				$arrErrors[] = "";
+				$this->_data['arrErrors'] = $arrErrors;
+				//suppression des données en session
+				$this->session->destroy();
+				//instruction d'affichage de la page
+				$this->display('suppression.tpl');
+
 			}
 		}
 	}

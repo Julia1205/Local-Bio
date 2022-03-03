@@ -13,7 +13,6 @@
 					<div>
 						{if count($arrErrors) > 0}
 								<div class="error">
-								
 										{foreach from=$arrErrors item=$strError}
 										   <p>{$strError}</p>
 										{/foreach}
@@ -36,7 +35,11 @@
 									{$form_submit}<br><br>
 								{$form_close}
 								<a class="abonner" href="{base_url('index.php/Users/password')}" style="height 50px">Changer mdp</a>
-							</div>
+								<a class="abonner" href="{base_url('index.php/Users/deleteAccount')}" style="height 50px">Supprimer son compte</a>
+						</div>
+					</div>		
+				</div>	
+			</section>
 				
 
 	{/block}

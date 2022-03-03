@@ -63,5 +63,20 @@ class Shop_model extends Model{
 		//retour de tableau contenant les détails du produit
 		return $arrDetails;
 	}
+	
+/**
+*	@brief 		fonction retournant les articles de la recherche
+* 	@details 
+*	<p>Cette fonction permet de rechercher via une requête, 
+*		les produits dans la base de données correspondants à la saisie</p>
+*	@param 	$strSearchField string
+*	@return	arrProduct tableau contenant les produits (sous-tableaux)
+*
+**/
+	public function findProduct($strSearchField){
+		//requête recherchant dans le nom du produit et dans la description
+		$arrProduct = $this->like("product_name", $strSearchField, 'both')->orLike("product_desc", $strSearchField, 'both')->findAll();
+		return $arrProduct;
+	}
 }
 

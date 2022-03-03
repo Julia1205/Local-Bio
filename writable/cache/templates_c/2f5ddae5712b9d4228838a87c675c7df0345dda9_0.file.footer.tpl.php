@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-01 09:50:52
+/* Smarty version 4.1.0, created on 2022-03-02 08:26:38
   from 'C:\wamp64\www\Local-Bio\app\Views\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_621e40dc2bfbb7_08385990',
+  'unifunc' => 'content_621f7e9e7e8a20_24830656',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5ddae5712b9d4228838a87c675c7df0345dda9' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\footer.tpl',
-      1 => 1646149851,
+      1 => 1646231125,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_621e40dc2bfbb7_08385990 (Smarty_Internal_Template $_smarty_tpl) {
+function content_621f7e9e7e8a20_24830656 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <!--FOOTER-->
     <section>
         <div class="BoxFooter">
@@ -81,23 +81,5 @@ function content_621e40dc2bfbb7_08385990 (Smarty_Internal_Template $_smarty_tpl)
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"><?php echo '</script'; ?>
 >
-	<?php if (((isset($_SESSION['user_id'])))) {?>
-	<?php } else { ?>
-	<?php echo '<script'; ?>
->function openForm() {
-    document.getElementById("popupForm").style.display = "block";
-  }
-
-  function closeForm() {
-    document.getElementById("popupForm").style.display = "none";
-  }
-
-function createAccount() {
-    window.open('inscription.html');
-
-}<?php echo '</script'; ?>
->
-	<?php }?>
-
 </html><?php }
 }

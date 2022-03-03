@@ -47,6 +47,28 @@ class Shop extends BaseController{
 			//Si le paramètre n'existe pas, utiliser la fonction findAll
 			$this->_data['products'] = $objShopModel->findAll();
 		}
+		//fonction de recherche
+		if (count($this->request->getPost())  > 0){
+		$objShopModel = new Shop_model(); //instanciation du model
+		$Product = new Shop_entity(); //instanciation de l'entité
+		//récupération de la chaîne de caractères dans le formulaire
+		$strSearchField = $this->request->getPost('product_search'); 
+		//utilisation de la fonction de recherche
+		$arrProducts = $objShopModel->findProduct($strSearchField);
+		//affichage des produits correspondants à la recherche
+		$this->_data['products'] = $arrProducts;
+
+		}
+		//instanciation du helper de formulaire
+		helper('form');
+
+		$this->_data['form_open'] = form_open("shop/boutique");
+		$this->_data['label_product']     = form_label("Rechercher un produit ", "product_search");
+		$this->_data['form_product'] = form_input ("product_search", "", "id='product_search'");
+		$this->_data['form_submit' ]= form_submit("submit", "Rechercher");
+		$this->_data['form_close'] = form_close();
+
+
 		//Appel de l'affichage
 		$this->display('shop.tpl');
 	}
