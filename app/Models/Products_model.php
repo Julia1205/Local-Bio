@@ -24,7 +24,7 @@ use CodeIgniter\Model;
 		// Nom du champ de la clé primaire
 		protected $primaryKey    = 'product_id';
 		// Champs utilisables
-		protected $allowedFields = ['product_name, product_desc, product_pu, product_stock, category_id, product_img, url_name'];
+		protected $allowedFields = ['product_name', 'product_desc', 'product_pu', 'product_stock', 'category_id', 'product_img', 'url_name', 'product_tva', 'product_conditioning'];
 	 
 		// Type de retour => Chemin de l'entité à utiliser
 		protected $returnType    = 'App\Entities\Products_entity';

@@ -85,6 +85,8 @@ class Shop extends BaseController{
 **/
 
 	public function details($charName=null){
+		//instanciation de l'helper
+			helper('form');
 		//Assignation du titre 
 		$this->_data['title'] = "Details";
 		//Instanciation de l'objet entité boutique
@@ -94,8 +96,29 @@ class Shop extends BaseController{
 		//Vérification si le nom du produit est présent dans l'URL
 		if($charName != null){
 			//Si présence, utiliser la fonction findDetails
+			$arrAttributesInput = [
+						'name' => 'product_quantity',
+						'id' => 'product_quantity',
+						'value' => $this->request->getPost('product_quantity')??'',
+						'type' => 'number',
+			];
+		
 			$this->_data['product'] = $objShopModel->findDetails($charName);
-			//var_dump($this->_data['product']); die;
+			$id = $this->_data['product'][0]->product_id;
+			$url = $this->_data['product'][0]->url_name;
+			
+			$this->_data['form_open'] = form_open("cart/panier/".$id);
+			$this->_data['input_quantity'] = form_input ($arrAttributesInput);
+			$this->_data['form_submit'] = form_submit("submit", "Ajouter au panier");
+			$this->_data['form_close'] = form_close();
+			$qty = $this->request->getPost('product_quantity');
+			
+			var_dump($this->request->getPost('product_quantity'));
+
+			
+
+		
+			
 			//Demande d'affichage de la page de details
 			$this->display('details.tpl');
 		}

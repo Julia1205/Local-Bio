@@ -38,18 +38,24 @@
 							<li class="PoidsChoix">5 kilogrammes</li>
 						</ul>
 						<p id="jscript"></p>
+						{$form_open}
 						<div class="ChoixProduitBox">
 							<div class="ChoixNumber">
-								<i class="fas fa-minus"></i>
-								<span class="NumberChoice">1</span>
-								<i class="fas fa-plus"></i>
+						
+								
+								{$input_quantity}
+								
 							</div>
 							
 							<div class="ButtonAddPanier">
 								<i class="fas fa-shopping-cart"></i>
-								<a class="AddPanier" id="button">Ajouter au panier</p>
+															
+								{$form_submit}
+								
+
 							</div>
 						</div>
+						{$form_close}
 					{/foreach}
 					</div>
 				</div>

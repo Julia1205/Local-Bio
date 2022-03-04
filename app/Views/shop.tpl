@@ -53,6 +53,7 @@
 											<p id="jscript"></p>
 											<button class="BouttonAchatArticle">
 												<span class="SpanAchat"><a href='{base_url('index.php/shop/details')}/{$objProduct->url_name}'>Voir l'article</a></span>
+												
 											</button>
 										</div>
 									</div>

@@ -130,13 +130,15 @@ class Products extends BaseController{
 							'product_stock' => $this->request->getPost('product_stock'),
 							'category_id' => $this->request->getPost('category_id'),
 							'product_img' => $this->request->getPost('product_img'), 
+							'product_tva' => 2,
+							'product_conditioning' => 0,
 							'url_name' => $url_name,
 					];
 					//Remplissage de l'objet entité
 					$objProducts->fill($arrProduct);
-				
+				//var_dump($arrProduct);die;
 					//Ajout en base de données
-					$objProductsModel->save($arrProduct);
+					$objProductsModel->save($objProducts);
 				}else{
 					$arrErrors = $validation->getErrors(); // on récupère les erreurs pour les afficher
 				}
