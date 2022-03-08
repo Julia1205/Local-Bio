@@ -50,15 +50,14 @@ class Shop extends BaseController{
 		}
 		//fonction de recherche
 		if (count($this->request->getPost())  > 0){
-		$objShopModel = new Shop_model(); //instanciation du model
-		$Product = new Shop_entity(); //instanciation de l'entité
-		//récupération de la chaîne de caractères dans le formulaire
-		$strSearchField = $this->request->getPost('product_search'); 
-		//utilisation de la fonction de recherche
-		$arrProducts = $objShopModel->findProduct($strSearchField);
-		//affichage des produits correspondants à la recherche
-		$this->_data['products'] = $arrProducts;
-
+			$objShopModel = new Shop_model(); //instanciation du model
+			$Product = new Shop_entity(); //instanciation de l'entité
+			//récupération de la chaîne de caractères dans le formulaire
+			$strSearchField = $this->request->getPost('product_search'); 
+			//utilisation de la fonction de recherche
+			$arrProducts = $objShopModel->findProduct($strSearchField);
+			//affichage des produits correspondants à la recherche
+			$this->_data['products'] = $arrProducts;
 		}
 		//instanciation du helper de formulaire
 		helper('form');
@@ -105,11 +104,20 @@ class Shop extends BaseController{
 		
 			$this->_data['product'] = $objShopModel->findDetails($charName);
 			$id = $this->_data['product'][0]->product_id;
-			$url = $this->_data['product'][0]->url_name;
-			
-			$this->_data['form_open'] = form_open("cart/panier/".$id);
+			$name = $this->_data['product'][0]->product_name;
+			$attr = [
+			'id' => 'formulaire_open',
+			];
+			$this->_data['form_open'] = form_open("cart/addpanier/".$id, $attr);
 			$this->_data['input_quantity'] = form_input ($arrAttributesInput);
-			$this->_data['form_submit'] = form_submit("submit", "Ajouter au panier");
+			$attr = [
+				'name' => 'submit',
+				'id' => 'Button',
+				'value' => 'Ajouter au panier',
+			];
+			$this->_data['form_submit'] = form_submit($attr);
+			
+			//$this->_data['form_hidden'] = form_hidden("product_id", $this->_data['product'][0]->product_id);
 			$this->_data['form_close'] = form_close();
 			$qty = $this->request->getPost('product_quantity');
 			

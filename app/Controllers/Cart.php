@@ -17,45 +17,58 @@
 namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\Cart_model;
+use App\Models\Shop_model;
 use App\Entities\Cart_entity;
 
 	class Cart extends BaseController{
 		
-		public function panier($id){			
-			$qty = $this->request->getPost('product_quantity'); 
+		public function addPanier($id){			
+			/* Gestion de l'ajout au panier */
+			$qty = intval($this->request->getPost('product_quantity')); 
 			$arrCart['products'] = $this->session->products;
-			//var_dump($arrCart['products']);die;
+
 			if (isset($arrCart['products'][$id])){
 				$initialQty = $arrCart['products'][$id];
 				$ttqty = $initialQty + $qty;
 				$arrCart['products'][$id] = $ttqty;	
-				$objProduct = new Cart_model;
-				//$product_name = $objProduct->getName($id);
-				//$temp = $product_name[0];
-				
-				//echo ('2 produits');
-				foreach($this->session->products as $key => $value){
-					
-						$product_name = $objProduct->getName($key);
-						//var_dump($product_name);
-					
-				}
 				$this->session->set($arrCart);
-				//var_dump($temp);
 			}else{
 				$arrCart['products'][$id] = $qty;
-				$objProduct = new Cart_model;
-				$product_name = $objProduct->getName($id);
-				//echo('1 produit');
 				$this->session->set($arrCart);
-			//var_dump($product_name);
 			}
+			return redirect()->to('shop/boutique');
+		}
 
-			
-			$this->session->set($arrCart);
-				//var_dump($this->session->products[1]);
-			$this->_data['title'] = "panier";
-			
-			$this->display('panier.tpl');
+		public function panier(){
+			if(isset($this->session->products)){
+				$arrCart = $this->session->products;
+				$objShopModel = new shop_model;
+				$totalHT = 0;
+				$totalTTC = 0;
+				$totalTVA= 0;
+				foreach($arrCart as $idProd => $prodQty){
+					$objProduct = $objShopModel->find($idProd);
+					$objProduct->qty = $prodQty;
+					$objProduct->prix_totalHT = $objProduct->qty * $objProduct->product_pu;
+					$objProduct->prix_totalTTC =  ROUND(($objProduct->prix_totalHT * $objProduct->product_tva /100) + $objProduct->prix_totalHT, 2);
+					$arrProductToDisplay[$idProd] = $objProduct;
+					$totalHT += $objProduct->prix_totalHT; 
+					$totalTTC += $objProduct->prix_totalTTC;
+					$totalTVA += $objProduct->prix_totalTTC - $objProduct->prix_totalHT;
+					
+					
+				}
+				$this->_data['totalHT'] = $totalHT;
+				$this->_data['totalTTC'] = $totalTTC;
+				$this->_data['totalTVA'] = $totalTVA;
+				
+				$this->_data['title'] 		= "panier";
+				$this->_data['arrProduct'] 	= $arrProductToDisplay;
+				
+				$this->display('panier.tpl');
+			}else{
+				$this->_data['title'] 		= "Interdit";
+				$this->display('empty_basket.tpl');
+			}
 		}
 	}

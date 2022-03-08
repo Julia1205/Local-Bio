@@ -29,14 +29,14 @@
 								class="fas fa-star"></i><i class="fas fa-star"></i>
 						</div>
 						<p class="Price">{$objProduct->product_pu} €</p>
-						<p class="Dexription">{$objProduct->product_desc}</p>
+						<p class="Desription">{$objProduct->product_desc} </p>
 						<h4 class="Poids">Conditionnement en emballage recyclé de </h4>
-						<ul class="PoidsMenu">
+						<!--<ul class="PoidsMenu">
 							<li class="PoidsChoixFirst"></li>
-							<li class="PoidsChoixFirst">{$objProduct->product_conditionning}kg</li>
-							<li class="PoidsChoix">2 kilogrammes</li>
-							<li class="PoidsChoix">5 kilogrammes</li>
-						</ul>
+							<li class="PoidsChoixFirst">{$objProduct->product_conditionning}kg</li>-->
+							<li class="PoidsChoix">{$objProduct->product_conditioning} kilogramme(s)</li>
+							<!--<li class="PoidsChoix">5 kilogrammes</li>
+						</ul>-->
 						<p id="jscript"></p>
 						{$form_open}
 						<div class="ChoixProduitBox">
@@ -49,7 +49,7 @@
 							
 							<div class="ButtonAddPanier">
 								<i class="fas fa-shopping-cart"></i>
-															
+								{*$form_hidden*}							
 								{$form_submit}
 								
 
@@ -68,9 +68,11 @@
 	<script>
 	{if (isset($smarty.session.user_id))}
 	{else}
-			$("#button").click(function(){
+			$("#formulaire_open").click(function(){
+				$("#formulaire_open").attr('action', "") 
 				$("#jscript").html("Veuillez vous <a href='{base_url('index.php/Users/connect')}'>connecter</a>")
 				$("#jscript").css("border", "2px solid red")
+				return false
 			});
 
 	{/if}

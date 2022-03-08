@@ -29,7 +29,7 @@
 				<div class="IconLogin">
 					<a href="{base_url('index.php/users/profil')}"><i class="fas fa-user"></i></a>
 					<a href="{base_url('index.php/users/disconnect')}"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-					<a href="{base_url('index.php/shop/')}"><i class="fas fa-shopping-cart"></i></a>
+					<a href="{base_url('index.php/cart/panier')}"><i class="fas fa-shopping-cart"></i></a>
 				</div>
 			</div>
 		</div>
@@ -40,7 +40,7 @@
 				<div class="IconLogin">
 
 					<a href="{base_url('index.php/users/connect')}"><i class="fas fa-user"></i></a>
-					<a href="{base_url('index.php/shop/')}"><i class="fas fa-shopping-cart"></i></a>
+					<a href="{base_url('index.php/cart/panier')}"><i class="fas fa-shopping-cart"></i></a>
 
 				</div>
 			</div>

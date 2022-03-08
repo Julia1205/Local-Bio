@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-02 03:38:26
+/* Smarty version 4.1.0, created on 2022-03-07 08:50:06
   from 'C:\wamp64\www\Local-Bio\app\Views\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_621f3b12347af2_64768986',
+  'unifunc' => 'content_62261b9e7a2502_91141289',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50d1980b7fa5fa2ee20d49a7b8bee2367a2dcb90' => 
     array (
       0 => 'C:\\wamp64\\www\\Local-Bio\\app\\Views\\header.tpl',
-      1 => 1646213905,
+      1 => 1646664605,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_621f3b12347af2_64768986 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62261b9e7a2502_91141289 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,7 +33,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_827971035621f3b123391b0_34984675', "css");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_85828086762261b9e793681_61541379', "css");
 ?>
 
     <title>Local'Bio - <?php echo $_smarty_tpl->tpl_vars['title']->value;?>
@@ -53,7 +53,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_827971035621f3b123
 "><i class="fas fa-user"></i></a>
 					<a href="<?php echo base_url('index.php/users/disconnect');?>
 "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-					<a href="<?php echo base_url('index.php/shop/');?>
+					<a href="<?php echo base_url('index.php/cart/panier');?>
 "><i class="fas fa-shopping-cart"></i></a>
 				</div>
 			</div>
@@ -66,7 +66,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_827971035621f3b123
 
 					<a href="<?php echo base_url('index.php/users/connect');?>
 "><i class="fas fa-user"></i></a>
-					<a href="<?php echo base_url('index.php/shop/');?>
+					<a href="<?php echo base_url('index.php/cart/panier');?>
 "><i class="fas fa-shopping-cart"></i></a>
 
 				</div>
@@ -75,12 +75,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_827971035621f3b123
 	<?php }?>
     <!--FIN BANDEAU CONNEXION--><?php }
 /* {block "css"} */
-class Block_827971035621f3b123391b0_34984675 extends Smarty_Internal_Block
+class Block_85828086762261b9e793681_61541379 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'css' => 
   array (
-    0 => 'Block_827971035621f3b123391b0_34984675',
+    0 => 'Block_85828086762261b9e793681_61541379',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

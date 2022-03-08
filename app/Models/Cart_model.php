@@ -35,7 +35,7 @@ use CodeIgniter\Model;
 		
 		public function getName($productId){
 			$productName = $this->where('product_id', $productId)->find();
-			var_dump($this);die;
+			
 			return $productName;
 		}
 	}
