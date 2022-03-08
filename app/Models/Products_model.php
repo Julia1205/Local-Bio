@@ -10,7 +10,7 @@
 * <p>Requêtes à la table des produits</p>
 * <p>Les actions sont :</p>
 * <ul>
-* 	<li><strong>hashing</strong> : fonction hashant le mot de passe</li>
+* 	<li><strong>findDetails</strong> : fonction récupérant l'ensemble des données d'un produit</li>
 *
 * </ul>
 *
@@ -31,20 +31,21 @@ use CodeIgniter\Model;
 	 
 		// Utilisation ou non des dates (création / modification)
 		protected $useTimestamps = false;
+		
 /**
 *	@brief 		fonction retournant le détails des articles
 * 	@details 
 *	<p>Cette fonction permet de rechercher via une requête, 
 *		le détail d'un article dans la base de données</p>
 *	@param 	$charProduct string
-*	@return	arrDetails tableau contenant les details (sous-tableaux)
+*	@return	$arrDetails tableau contenant les details (sous-tableaux)
 *
 **/
-	public function findDetails($charProduct){
-		//requête à la base de données du produit recherché
-		$arrDetails = $this->where("url_name", $charProduct)->find();
-		//retour de tableau contenant les détails du produit
-		return $arrDetails;
-	}
+		public function findDetails($charProduct){
+			//requête à la base de données du produit recherché
+			$arrDetails = $this->where("url_name", $charProduct)->find();
+			//retour de tableau contenant les détails du produit
+			return $arrDetails;
+		}
 
 	}

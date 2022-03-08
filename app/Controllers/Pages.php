@@ -20,32 +20,36 @@ use CodeIgniter\Controller;
 use App\Models\Accueil_model;
 use App\Entities\accueil_entity;
 
-class Pages extends BaseController{
-	
-	public function __construct(){
+	class Pages extends BaseController{
 		
-	}
+/**
+*	@brief 		constructeur de la class
+*
+**/
+		public function __construct(){
+			
+		}
 /**
 *	@brief 		fonction retournant la page d'accueil
 * 	@details 
 *	<p>Cette fonction permet d'attribuer le titre de la page et d'afficher le template correspondant
 **/
-	public function accueil(){
-		//Assignation du titre
-		$this->_data['title'] = "Accueil";		
-		//Demande d'affichage de la page
-		$this->display("accueil.tpl");
+		public function accueil(){
+			//Assignation du titre
+			$this->_data['title'] = "Accueil";		
+			//Demande d'affichage de la page
+			$this->display("accueil.tpl");
 
-	}
+		}
 /**
 *	@brief 		fonction retournant la page à propos
 * 	@details 
 *	<p>Cette fonction permet d'attribuer le titre de la page et d'afficher le template correspondant
 **/
-	public function about(){
-		//Assignation du titre
-		$this->_data['title'] = "A propos";
-		//Demande d'affichage de la page
-		$this->display("about.tpl");
+		public function about(){
+			//Assignation du titre
+			$this->_data['title'] = "A propos";
+			//Demande d'affichage de la page
+			$this->display("about.tpl");
+		}
 	}
-}

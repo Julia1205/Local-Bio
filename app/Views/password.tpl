@@ -11,12 +11,11 @@
 					<div class="boxInfo">
 						<div>
 							{if count($arrErrors) > 0}
-									<div class="error">
-									
-											{foreach from=$arrErrors item=$strError}
-											   <p>{$strError}</p>
-											{/foreach}
-									</div>
+								<div class="error">
+										{foreach from=$arrErrors item=$strError}
+										   <p>{$strError}</p>
+										{/foreach}
+								</div>
 							{/if}
 							<div class="text-center">
 								{$form_open}
@@ -34,5 +33,4 @@
 					</div>
 				</div>
 			</section>
-
 	{/block}

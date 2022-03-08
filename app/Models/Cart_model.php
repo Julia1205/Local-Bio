@@ -7,12 +7,8 @@
 * @brief Model des produits
 *
 *  @details 
-* <p>Cette classe permet de faire les requêtes à la base de données pour les produits</p>
-* <p>Les actions sont :</p>
-* <ul>
-* 	<li><strong>findByCat</strong> : récupération des articles en fonction de leur catégorie</li>
-* </ul>
-*
+* <p>Cette classe est prévue pour les fonctions du controller Cart</p>
+* <p>Elle ne contient pas encore de fonctions</p>
 **/
 namespace App\Models;
 use CodeIgniter\Model;
@@ -32,10 +28,4 @@ use CodeIgniter\Model;
 		// Utilisation ou non des dates (création / modification)
 		protected $useTimestamps = false;
 
-		
-		public function getName($productId){
-			$productName = $this->where('product_id', $productId)->find();
-			
-			return $productName;
-		}
 	}

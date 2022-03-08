@@ -4,7 +4,6 @@
 		<link rel="stylesheet" href="{base_url('assets/css/legume.css')}"/>
 	{/block}
 
-
 	{block name="content"}	
 		<div class="container mt-5">
 			<table class="tftable" border="1">
